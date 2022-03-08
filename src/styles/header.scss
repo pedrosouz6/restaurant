@@ -1,0 +1,22 @@
+#header {
+    width: 100%;
+    background-color: white;
+
+    border-bottom: 2px solid silver;
+
+    .container-header {
+        width: 100%;
+        height: 70px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav ul {
+        list-style: none;
+
+        display: flex;
+        gap: 1.5rem;
+    }
+}
