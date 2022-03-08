@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../styles/header.scss";
 
 export default function Header() {
@@ -11,7 +12,7 @@ export default function Header() {
                     <nav>
                         <ul>
                             <li>Home</li>
-                            <li>Garçom</li>
+                            <li><Link to="/garcom">Garçom</Link></li>
                             <li>Cozinheiro</li>
                         </ul>
                     </nav>

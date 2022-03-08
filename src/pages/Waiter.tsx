@@ -10,7 +10,7 @@ export default function Waiter() {
                     <aside id="waiter-aside">
 
                         <div className="waiter-logo">
-                            <h1>Restarante</h1>
+                            <h1>Restaurante</h1>
                         </div>
 
                         <div className="waiter-profile">
