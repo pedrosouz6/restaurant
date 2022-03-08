@@ -1,48 +1,33 @@
 #page-waiter {
     width: 100%;
-
-    #waiter-aside {
+    
+    .container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    aside {
+        flex: 1 1 150px;
         max-width: 250px;
-        height: 100vh;
-
+        min-height: calc(100vh - 72px);
+        max-height: auto;
+        
         position: relative;
         
-        background-color: blue;
-        
-        .waiter-logo h1{
-            padding: 15px;
-        }
-        
-        .waiter-profile {
-            width: 100%;
-            
-            padding: 20px 15px;
-            
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-            
-            border-bottom: 1px solid black;
-        }
-        
-        .waiter-profile img{
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-        }
-        
+        background-color: slateblue;
+
         nav ul li {
             padding: 15px;
-
+    
             list-style: none;
             cursor: pointer;
-
+    
             transition: .2s ease-in-out;
         }
         
         nav ul li:hover {
-            
             background-color: cadetblue;
         }
         
@@ -50,5 +35,105 @@
             position: absolute;
             bottom: 15px;
         }
+    }
+    //end aside
+
+    section {
+        flex: 1 1 300px;
+        min-height: calc(100vh - 72px);
+        max-height: auto;
+
+        .section-header h1 {
+            font-size: 24px;
+            padding: 1rem 0 30px 0px;
+            color: #333;
+        }
+
+        .container-form {
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+       
+            form {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            input {
+                height: 35px;
+
+                border: silver 1px solid;
+                border-radius: 5px;
+                padding: 0 7px;
+            }
+
+            #dish {
+                width: 260px;
+            }
+
+            #table {
+                width: 100px;
+            }
+
+            #submit {
+                padding: 0 20px;
+
+                background-color: slateblue;
+                color: white;
+                border: none;
+
+                cursor: pointer;
+            }
+        }
+        // end form
+        
+        article {
+            margin-top: 80px;
+
+            .article-header h2{
+                color: #333;
+                margin-bottom: 20px;
+            }
+
+            .container-cards {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 4rem;
+            }
+
+            .cards {
+                flex: 1 1 120px;
+                position: relative;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: .5rem;
+
+                max-width: 170px;
+                height: 150px;
+
+                background-color: slateblue;
+
+                border-radius: 5px;
+                padding: 10px;
+                border-left: 5px solid springgreen;
+            }
+
+            .cards p,
+            .cards span {
+                text-align: center;
+                color: white;
+            }   
+
+            .cards span {
+                font-size: 50pt;
+            }
+        }
+
+        //end article
     }
 }

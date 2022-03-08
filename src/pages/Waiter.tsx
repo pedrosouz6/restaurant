@@ -1,37 +1,61 @@
-import Profile from '../images/profile.jpg';
+import { Link } from "react-router-dom";
+import Header from "../components/Header";
 
-import '../styles/waiter.scss'
+import '../styles/waiter.scss';
 
 export default function Waiter() {
     return (
-        <main id="page-waiter">
-            <div className="center">
-                <div className="container">
-                    <aside id="waiter-aside">
+        <div id="page-waiter">
+            <Header/>
+            <main>
+                <div className="center">
+                    <div className="container">
+                        <aside>
+                            <nav>
+                                <ul>
+                                    <li>Fazer Pedido</li>
+                                    <li>Ver os pedidos</li>
+                                </ul>
+                            </nav>
 
-                        <div className="waiter-logo">
-                            <h1>Restaurante</h1>
-                        </div>
+                            <div className="aside-footer">
+                                <Link to="/">Sair da conta</Link>
+                            </div>
+                        </aside>
+                        <section>
+                            <div className="section-header">
+                                <h1>Fazer o pedido</h1>
+                            </div>
 
-                        <div className="waiter-profile">
-                            <img src={Profile} alt="" />
-                            <span>Pedro Souza</span>
-                        </div>
+                            <div className="container-form">
+                                <form>
+                                    <input id="dish" type="text" placeholder="Digite o prato" />
+                                    <input id="table" type="number" placeholder="Mesa" />
+                                    <input id="submit" type="submit" value="Enviar" />
+                                </form>
+                            </div>
 
-                        <nav>
-                            <ul>
-                                <li>Fazer Pedido</li>
-                                <li>Ver os pedidos</li>
-                            </ul>
-                        </nav>
-
-                        <div className="aside-footer">
-                            Sair da conta
-                        </div>
-
-                    </aside>
+                            <article>
+                                <div className="article-header">
+                                    <h2>Estatísticas dos pedidos</h2>
+                                </div>
+                                <div className="container-cards">
+                                    <div className="cards">
+                                        <span>110</span>
+                                        <p>Pedidos finalizados</p>
+                                    </div>
+                                    <div className="cards">
+                
+                                    </div>
+                                    <div className="cards">
+                
+                                    </div>
+                                </div>
+                            </article>
+                        </section>
+                    </div>
                 </div>
-            </div>
-        </main>
+            </main>
+        </div>
     )
 }
