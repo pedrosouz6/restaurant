@@ -1,7 +1,7 @@
 import Aside from "../../components/Aside";
 import Header from "../../components/Header";
 
-import '../../styles/waiter.scss';
+import '../../styles/see.scss';
 
 export default function Waiter() {
     return (
@@ -11,9 +11,9 @@ export default function Waiter() {
                 <div className="center">
                     <div className="container">
                         <Aside />
-                        <section>
+                        <section id="section-request">
                             <div className="section-header">
-                                <h1>Fazer o pedido</h1>
+                                <h1>Fazer os pedidos</h1>
                             </div>
 
                             <div className="container-form">
