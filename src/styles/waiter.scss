@@ -8,35 +8,7 @@
         gap: 1rem;
     }
     
-    aside {
-        flex: 1 1 150px;
-        max-width: 250px;
-        min-height: calc(100vh - 72px);
-        max-height: auto;
-        
-        position: relative;
-        
-        background-color: slateblue;
-
-        nav ul li {
-            padding: 15px;
     
-            list-style: none;
-            cursor: pointer;
-    
-            transition: .2s ease-in-out;
-        }
-        
-        nav ul li:hover {
-            background-color: cadetblue;
-        }
-        
-        .aside-footer {
-            position: absolute;
-            bottom: 15px;
-        }
-    }
-    //end aside
 
     section {
         flex: 1 1 300px;
@@ -120,17 +92,28 @@
 
                 border-radius: 5px;
                 padding: 10px;
-                border-left: 5px solid springgreen;
             }
-
+            
             .cards p,
             .cards span {
                 text-align: center;
                 color: white;
             }   
-
+            
             .cards span {
                 font-size: 50pt;
+            }
+            
+            #finishid {
+                border-left: 5px solid springgreen;
+            }
+
+            #in-progress {
+                border-left: 5px solid rgb(207, 207, 15);
+            }
+
+            #request {
+                border-left: 5px solid rgb(235, 83, 78);
             }
         }
 

@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import Header from "../components/Header";
+import Aside from "../../components/Aside";
+import Header from "../../components/Header";
 
-import '../styles/waiter.scss';
+import '../../styles/waiter.scss';
 
 export default function Waiter() {
     return (
@@ -10,21 +10,10 @@ export default function Waiter() {
             <main>
                 <div className="center">
                     <div className="container">
-                        <aside>
-                            <nav>
-                                <ul>
-                                    <li>Fazer Pedido</li>
-                                    <li>Ver os pedidos</li>
-                                </ul>
-                            </nav>
-
-                            <div className="aside-footer">
-                                <Link to="/">Sair da conta</Link>
-                            </div>
-                        </aside>
+                        <Aside />
                         <section>
                             <div className="section-header">
-                                <h1>Fazer o pedido</h1>
+                                <h1>Fazer o pedido ew</h1>
                             </div>
 
                             <div className="container-form">
@@ -40,15 +29,17 @@ export default function Waiter() {
                                     <h2>Estatísticas dos pedidos</h2>
                                 </div>
                                 <div className="container-cards">
-                                    <div className="cards">
+                                    <div className="cards" id="finishid" >
                                         <span>110</span>
                                         <p>Pedidos finalizados</p>
                                     </div>
-                                    <div className="cards">
-                
+                                    <div className="cards" id="in-progress" >
+                                        <span>110</span>
+                                        <p>Em andamento</p>
                                     </div>
-                                    <div className="cards">
-                
+                                    <div className="cards" id="request" >
+                                        <span>110</span>
+                                        <p>Pedidos feitos</p>
                                     </div>
                                 </div>
                             </article>

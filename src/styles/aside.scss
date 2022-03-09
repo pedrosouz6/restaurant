@@ -1,0 +1,30 @@
+#waiter-aside {
+    flex: 1 1 150px;
+    max-width: 250px;
+    min-height: calc(100vh - 72px);
+    max-height: auto;
+    
+    position: relative;
+    
+    border-right: 2px solid silver;
+    border-left: 2px solid silver;
+
+    nav ul li {
+        padding: 15px;
+
+        list-style: none;
+        cursor: pointer;
+
+        transition: .2s ease-in-out;
+    }
+    
+    nav ul li:hover {
+        background-color: silver;
+    }
+    
+    .aside-footer {
+        position: absolute;
+        bottom: 15px;
+    }
+}
+//end aside
