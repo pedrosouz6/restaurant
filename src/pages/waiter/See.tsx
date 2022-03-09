@@ -28,7 +28,7 @@ export default function Waiter() {
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Feijoda</td>
+                                            <td>Feijoada</td>
                                             <td className="number-table">04</td>
                                             <td className="in-process">Em andamento</td>
                                         </tr>

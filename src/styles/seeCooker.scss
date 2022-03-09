@@ -1,0 +1,80 @@
+#page-cooker {
+
+    .container {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .section-header h1{
+        font-size: 24px;
+        padding: 1rem 0 30px 0px;
+        color: #333;
+    }
+
+    .section-cooker {
+        flex: 1;
+    }
+
+    .table {
+        display: flex;
+        justify-content: center;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    table td {
+        padding: 8px 10px;
+    }
+
+    .number-table {
+        text-align: center;
+    }
+    
+    table thead td {
+        padding: 10px 30px;
+        
+        text-align: center;
+
+        background-color: rgb(106, 90, 205);
+        color: white;
+
+        letter-spacing: .3px;
+    }
+
+    table tbody tr:nth-child(even) {
+        background-color: rgba(106, 90, 205, .2);
+    }
+
+    .in-process,
+    .delivered,
+    .finishid {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+    }
+
+    .in-process::before,
+    .delivered::before,
+    .finishid::before {
+        content: '';
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+    }
+    
+    .in-process::before{
+        background-color: rgb(207, 207, 15);
+    }
+
+    .delivered::before{
+        background-color: silver;
+    }
+
+    .finishid::before {
+        background-color: springgreen;
+    }
+}

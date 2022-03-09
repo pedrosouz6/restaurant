@@ -1,19 +1,15 @@
 import { Link } from "react-router-dom";
 import { BsBoxArrowInLeft } from "react-icons/bs";
-import { MdMenuBook } from "react-icons/md";
-import { FaBookReader } from "react-icons/fa";
 import { BsPencilSquare } from "react-icons/bs";
 
 import '../styles/aside.scss';
 
-export default function Aside() {
+export default function AsideCooker() {
     return (
         <aside id="waiter-aside">
             <nav>
                 <ul>
-                    <li> <Link to="/garcom/fazer-pedidos" > <i> <BsPencilSquare /> </i> Fazer Pedido</Link> </li>
-                    <li> <Link to="/garcom/ver-pedidos"> <i> <FaBookReader /> </i> Ver os pedidos</Link> </li>
-                    <li> <Link to="/garcom/menu"> <i> <MdMenuBook /> </i> Cardapio</Link> </li>
+                    <li> <Link to="/cozinheiro/ver-pedidos" > <i> <BsPencilSquare /> </i> Fazer Pedido </Link> </li>
                 </ul>
             </nav>
 
