@@ -9,8 +9,8 @@ export default function Routess() {
         <Router>
             <Routes>
                 <Route path="/" element={ <Home /> } />
-                <Route path="/garcom" element={ <Waiter /> } />
-                <Route path="/pedido" element={ <Resquest /> } />
+                <Route path="/garcom/fazer-pedidos" element={ <Waiter /> } />
+                <Route path="/garcom/ver-pedidos" element={ <Resquest /> } />
             </Routes>
         </Router>
     )

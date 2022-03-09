@@ -10,7 +10,7 @@ export default function Waiter() {
             <main>
                 <div className="center">
                     <div className="container">
-                        
+                        <Aside />
                         <section>
                             <div className="section-header">
                                 <h1>Fazer o pedido</h1>

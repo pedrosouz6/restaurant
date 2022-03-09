@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 
+import '../styles/aside.scss';
+
 export default function Aside() {
     return (
         <aside id="waiter-aside">
             <nav>
                 <ul>
-                    <li> <Link to="/garcom" >Fazer Pedido</Link> </li>
-                    <li> <Link to="/pedido">Ver os pedidos</Link> </li>
+                    <li> <Link to="/garcom/fazer-pedidos" >Fazer Pedido</Link> </li>
+                    <li> <Link to="/garcom/ver-pedidos">Ver os pedidos</Link> </li>
                 </ul>
             </nav>
 
