@@ -1,30 +1,59 @@
 #waiter-aside {
     flex: 1 1 150px;
     max-width: 250px;
-    min-height: calc(100vh - 72px);
     max-height: auto;
+    min-height: calc(100vh - 72px);
+
+    padding: 0 0 40px 0;
     
     position: relative;
     
     border-right: 2px solid silver;
     border-left: 2px solid silver;
 
-    nav ul li {
-        padding: 15px;
+    nav ul li{
+         list-style: none;
+     }
 
-        list-style: none;
+    nav ul li a {
+        display: flex;
+        align-items: center;
+        gap: .6rem;
+        padding: 10px 15px;
+
+        text-decoration: none;
         cursor: pointer;
 
         transition: .2s ease-in-out;
+        color: #333;
+    }
+
+    nav ul li a i {
+        display: block;
+        font-size: 25px;
     }
     
-    nav ul li:hover {
+    nav ul li a:hover {
         background-color: silver;
     }
     
     .aside-footer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         position: absolute;
         bottom: 15px;
+    }
+
+    .aside-footer a {
+        text-decoration: none;
+        color: #333;
+        transition: .2s ease-in-out;
+    }
+
+    .aside-footer a:hover {
+        color: black;
     }
 }
 //end aside
