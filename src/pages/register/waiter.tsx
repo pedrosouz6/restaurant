@@ -10,7 +10,7 @@ export default function FormCooker() {
                     <Link to="/login/garcom">Garçom</Link>
                     <Link to="/login/cozinheiro">Cozinheiro</Link>
                 </div>
-                <h2>Logar como Cozinheiro</h2>
+                <h2>Logar como Garçom</h2>
                 <form>
                     <input type="text" placeholder="Email" />
                     <input type="text" placeholder="Senha" />

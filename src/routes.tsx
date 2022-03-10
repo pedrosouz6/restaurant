@@ -7,6 +7,7 @@ import Menu from "./pages/waiter/Menu";
 import SeeCooker from "./pages/cooker/See";
 import Admin from "./pages/admin/Admin";
 import LoginCooker from "./pages/register/cooker";
+import LoginWaiter from "./pages/register/waiter";
 
 export default function Routess() {
     return (
@@ -20,6 +21,7 @@ export default function Routess() {
                 <Route path="/cozinheiro/ver-pedidos" element={ <SeeCooker /> } />
                 <Route path="/admin" element={ <Admin /> } />
                 <Route path="/login/cozinheiro" element={ <LoginCooker /> } />
+                <Route path="/login/garcom" element={ <LoginWaiter /> } />
             </Routes>
         </Router>
     )
