@@ -18,11 +18,11 @@ export default function Admin () {
 
                         <div className="add-dish">
                             <form>
-                                <input type="text" placeholder="Nome do prato" />
-                                <input type="text" placeholder="O que vem no prato?" />
-                                <input type="number" placeholder="Preço do prato" />
+                                <input type="text" placeholder="Nome do prato" id="add-dish-name" />
+                                <input type="text" placeholder="O que vem no prato?" id="add-dish-items" />
+                                <input type="number" placeholder="Preço do prato" id="add-dish-price" />
 
-                                <input type="submit" value="Adicionar" />
+                                <input type="submit" value="Adicionar" id="add-dish-submit" />
                             </form>
                         </div>
                     </section>
