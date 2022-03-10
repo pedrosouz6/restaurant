@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import "../../styles/login.scss";
 
-export default function FormCooker() {
+export default function RegisterCooker () {
     return (
         <div id="page-login">
             <div className="container">
@@ -10,14 +10,14 @@ export default function FormCooker() {
                     <Link to="/login/garcom">Garçom</Link>
                     <Link to="/login/cozinheiro">Cozinheiro</Link>
                 </div>
-                <h2>Logar como Garçom</h2>
+                <h2>Criar conta como garçom</h2>
                 <form>
                     <input type="text" placeholder="Email" />
                     <input type="text" placeholder="Senha" />
-                    <input type="submit" value="Entrar" />
+                    <input type="submit" value="Criar conta" />
 
-                    <span><Link to="/">Esqueceu a senha?</Link></span>
-                </form>
+                    <span><Link to="/login/cozinheiro">Já tenho conta</Link></span>
+                </form> 
             </div>
         </div>
     )
