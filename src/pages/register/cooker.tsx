@@ -10,6 +10,12 @@ export default function RegisterCooker () {
 
     const validateDatas = (e: FormEvent) => {
         e.preventDefault();
+
+        if(!(email.trim() === '' || password.trim() === '')) {
+            return console.log(email, password)
+        }
+
+        return console.log("Errado")
     }
 
     return (
@@ -21,8 +27,12 @@ export default function RegisterCooker () {
                 </div>
                 <h2>Criar conta como cozinheiro</h2>
                 <form onSubmit={validateDatas}>
-                    <input type="text" placeholder="Email" />
-                    <input type="text" placeholder="Senha" />
+                    <input type="text" 
+                    placeholder="Email"
+                    onChange={e => setEmail(e.target.value)} />
+                    <input type="text" 
+                    placeholder="Senha" 
+                    onChange={e => setPassword(e.target.value)} />
                     <input type="submit" value="Criar conta" />
 
                     <span><Link to="/login/garcom">Já tenho conta</Link></span>
