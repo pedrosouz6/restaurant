@@ -12,8 +12,8 @@ export default function Header() {
                     <nav>
                         <ul>
                             <li>Home</li>
-                            <li><Link to="/garcom/fazer-pedidos">Garçom</Link></li>
-                            <li><Link to="/cozinheiro/ver-pedidos">Cozinheiro</Link></li>
+                            <li><Link to="/cadastrar/garcom">Garçom</Link></li>
+                            <li><Link to="/cadastrar/cozinheiro">Cozinheiro</Link></li>
                         </ul>
                     </nav>
                 </div>

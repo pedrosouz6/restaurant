@@ -7,8 +7,8 @@ export default function RegisterCooker () {
         <div id="page-login">
             <div className="container">
                 <div className="choose-login">
-                    <Link to="/login/garcom">Garçom</Link>
-                    <Link to="/login/cozinheiro">Cozinheiro</Link>
+                    <Link to="/cadastrar/garcom">Garçom</Link>
+                    <Link to="/cadastrar/cozinheiro">Cozinheiro</Link>
                 </div>
                 <h2>Criar conta como garçom</h2>
                 <form>
