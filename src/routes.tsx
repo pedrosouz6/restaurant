@@ -5,6 +5,7 @@ import Home from "./components/Header";
 import RequestWaiter from "./pages/waiter/Request";
 import Menu from "./pages/waiter/Menu";
 import SeeCooker from "./pages/cooker/See";
+import Admin from "./pages/admin/Admin";
 
 export default function Routess() {
     return (
@@ -16,6 +17,7 @@ export default function Routess() {
                 <Route path="/garcom/menu" element={ <Menu /> } />
                 <Route path="/garcom/ver-pedidos" element={ <See /> } />
                 <Route path="/cozinheiro/ver-pedidos" element={ <SeeCooker /> } />
+                <Route path="/admin" element={ <Admin /> } />
             </Routes>
         </Router>
     )

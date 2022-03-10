@@ -1,0 +1,17 @@
+#page-admin {
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .section-admin {
+        flex: 1;
+    }
+
+    .section-header h1 {
+        font-size: 24px;
+        padding: 1rem 0 30px 0px;
+        color: #333;
+    }
+}
