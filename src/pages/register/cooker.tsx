@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, FormEvent } from "react";
+import Axios from "axios";
 
 import "../../styles/login.scss";
 
@@ -11,11 +12,14 @@ export default function RegisterCooker () {
     const validateDatas = (e: FormEvent) => {
         e.preventDefault();
 
-        if(!(email.trim() === '' || password.trim() === '')) {
-            return console.log(email, password)
+        if(email.trim() === '' || password.trim() === '') {
+            return console.log("Errado")
         }
-
-        return console.log("Errado")
+        
+        Axios.post('http://localhost:3333/register/cooker', {
+            email,
+            password
+        })
     }
 
     return (
