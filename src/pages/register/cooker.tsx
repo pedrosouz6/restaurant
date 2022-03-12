@@ -20,11 +20,7 @@ export default function RegisterCooker () {
             return console.log("Errado")
         }
         
-        Axios.post('http://localhost:3333/register/cooker', {
-            email, 
-            password
-        })
-        .then(response => setToken(response.data));
+        
 
         AuthCookerPage();
     }
