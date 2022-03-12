@@ -11,7 +11,7 @@ export default function Header() {
                     </div>
                     <nav>
                         <ul>
-                            <li>Home</li>
+                            <li><Link to="/cozinheiro/ver-pedidos">Ver pedidos cozinheiro</Link></li>
                             <li><Link to="/cadastrar/garcom">Garçom</Link></li>
                             <li><Link to="/cadastrar/cozinheiro">Cozinheiro</Link></li>
                         </ul>

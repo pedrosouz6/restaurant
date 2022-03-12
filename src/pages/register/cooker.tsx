@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, FormEvent } from "react";
 import Axios from "axios";
+import { AuthCooker } from "../../context/auth";
 
 import "../../styles/login.scss";
 
@@ -8,6 +9,9 @@ export default function RegisterCooker () {
 
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
+    const [ token, setToken ] = useState('');
+
+    const { AuthCookerPage } = AuthCooker();
 
     const validateDatas = (e: FormEvent) => {
         e.preventDefault();
@@ -17,10 +21,14 @@ export default function RegisterCooker () {
         }
         
         Axios.post('http://localhost:3333/register/cooker', {
-            email,
+            email, 
             password
         })
+        .then(response => setToken(response.data));
+
+        AuthCookerPage();
     }
+
 
     return (
         <div id="page-login">
