@@ -19,7 +19,7 @@ export default function RegisterCooker () {
             return console.log("Errado")
         }
 
-        AuthCookerPage();
+        AuthCookerPage(email, password);
     }
 
 
