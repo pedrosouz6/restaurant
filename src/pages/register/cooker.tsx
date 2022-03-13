@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { useState, FormEvent } from "react";
-import Axios from "axios";
 import { AuthCooker } from "../../context/auth";
 
 import "../../styles/login.scss";
@@ -9,7 +8,7 @@ export default function RegisterCooker () {
 
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
-    const [ token, setToken ] = useState('');
+    const [ datas, setDatas ] = useState([]);
 
     const { AuthCookerPage } = AuthCooker();
 
@@ -19,8 +18,6 @@ export default function RegisterCooker () {
         if(email.trim() === '' || password.trim() === '') {
             return console.log("Errado")
         }
-        
-        
 
         AuthCookerPage();
     }
