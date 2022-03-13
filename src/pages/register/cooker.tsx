@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Axios from "axios";
 import { useState, FormEvent } from "react";
 import { AuthCooker } from "../../context/auth";
 
@@ -8,9 +9,10 @@ export default function RegisterCooker () {
 
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
-    const [ datas, setDatas ] = useState([]);
 
-    const { AuthCookerPage } = AuthCooker();
+    const { setAuthCooker, datas } = AuthCooker();
+
+    const navigate = useNavigate();
 
     const validateDatas = (e: FormEvent) => {
         e.preventDefault();
@@ -19,9 +21,18 @@ export default function RegisterCooker () {
             return console.log("Errado")
         }
 
-        AuthCookerPage(email, password);
-    }
+        Axios.post('http://localhost:3333/register/cooker', {
+            email, 
+            password
+        })
+        .then(response => localStorage
+            .setItem('user', JSON.stringify(response.data)
+        ));
 
+        setAuthCooker(true);
+        navigate("/cozinheiro/ver-pedidos")
+
+    }
 
     return (
         <div id="page-login">

@@ -1,5 +1,4 @@
-import { createContext, useState, useContext, ReactNode } from "react";
-import Axios from "axios";
+import { createContext, useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const AuthContext = createContext();
@@ -9,34 +8,26 @@ export default function AuthProvider({ children }) {
     const navigate = useNavigate();
 
     const [ authCooker, setAuthCooker ] = useState(false);
-    const [ datas, setDatas ] = useState([])
- 
-    function AuthCookerPage(email, password) {
-        Axios.post('http://localhost:3333/register/cooker', {
-            email, 
-            password
-        })
-        .then(response => setDatas(response.data));
+    const [ datas, setDatas ] = useState([]);
 
-        //Pensar em usar o UseEffect
-        
-        if(datas.user) {
-            console.log(datas)
+    useEffect(() => {
+        const user = localStorage.getItem('user');
+        if(user) {
             setAuthCooker(true);
-            //navigate('/cozinheiro/ver-pedidos')
+            navigate('/cozinheiro/ver-pedidos')
         } else {
-            console.log("erro")
+            setAuthCooker(false);
+            navigate('/');
         }
-    }
-
-    function test() {
-            
-    }
+    }, [])
+        
 
     return (
         <AuthContext.Provider value={{
-            authCooker: authCooker,
-            AuthCookerPage
+            authCooker,
+            setAuthCooker,
+            setDatas,
+            datas
         }}>
 
             { children }
@@ -47,7 +38,7 @@ export default function AuthProvider({ children }) {
 
 export const AuthCooker = () => {
     const context = useContext(AuthContext);
-    const { authCooker, AuthCookerPage } = context;
-    return { authCooker, AuthCookerPage };
+    const { authCooker, setAuthCooker, setDatas, datas } = context;
+    return { authCooker, setAuthCooker, setDatas, datas };
 } 
     

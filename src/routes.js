@@ -17,7 +17,7 @@ export default function Routess() {
 
     const PrivateSeeCooker = ({children}) => {
         const { authCooker } = AuthCooker();
-        console.log(authCooker)
+        
         if(authCooker) {
             return children
         }
