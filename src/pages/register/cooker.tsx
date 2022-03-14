@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, } from "react-router-dom";
 import Axios from "axios";
 import { useState, FormEvent } from "react";
 import { AuthCooker } from "../../context/auth";
@@ -25,13 +25,13 @@ export default function RegisterCooker () {
             email, 
             password
         })
-        .then(response => localStorage
-            .setItem('user', JSON.stringify(response.data)
+        .then(response => 
+            localStorage.setItem('user', 
+            JSON.stringify(response.data)
         ));
 
         setAuthCooker(true);
-        navigate("/cozinheiro/ver-pedidos")
-
+        return navigate("/cozinheiro/ver-pedidos");
     }
 
     return (

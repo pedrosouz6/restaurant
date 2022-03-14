@@ -1,9 +1,33 @@
 import Header from "../../components/Header";
 import AsideCooker from "../../components/AsideCooker";
+import { useEffect, useState } from "react";
+import { AuthCooker } from "../../context/auth";
 
 import "../../styles/seeCooker.scss";
 
+// type UserType = {
+//     user: {
+//         email: string;
+//         password: string
+//     };
+//     token: string
+// }
+
 export default function Request () {
+
+    const { loading, setLoading } = AuthCooker();
+
+    const [ datasUser, setDataUser ] = useState([]);
+
+    useEffect(() => {
+        const user = localStorage.getItem('user');
+        setDataUser(JSON.parse(user));
+        setLoading(true)
+    }, []);
+
+    console.log(loading)
+
+
     return (
         <div id="page-cooker">
             <Header />
@@ -13,7 +37,7 @@ export default function Request () {
 
                     <section className="section-cooker">
                         <div className="section-header">
-                            <h1>Ver pedidos</h1>
+                            <h1>Ver pedidos </h1>
                         </div>
                         <div className="table">
                             <table>

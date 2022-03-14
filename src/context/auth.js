@@ -9,9 +9,11 @@ export default function AuthProvider({ children }) {
 
     const [ authCooker, setAuthCooker ] = useState(false);
     const [ datas, setDatas ] = useState([]);
+    const [ loading, setLoading ] = useState(false);
 
     useEffect(() => {
         const user = localStorage.getItem('user');
+
         if(user) {
             setAuthCooker(true);
             navigate('/cozinheiro/ver-pedidos')
@@ -19,6 +21,7 @@ export default function AuthProvider({ children }) {
             setAuthCooker(false);
             navigate('/');
         }
+
     }, [])
         
 
@@ -27,7 +30,9 @@ export default function AuthProvider({ children }) {
             authCooker,
             setAuthCooker,
             setDatas,
-            datas
+            setLoading,
+            loading,
+            datas,
         }}>
 
             { children }
@@ -38,7 +43,7 @@ export default function AuthProvider({ children }) {
 
 export const AuthCooker = () => {
     const context = useContext(AuthContext);
-    const { authCooker, setAuthCooker, setDatas, datas } = context;
-    return { authCooker, setAuthCooker, setDatas, datas };
+    const { authCooker, setAuthCooker, setDatas, datas, setLoading, loading } = context;
+    return { authCooker, setAuthCooker, setDatas, datas, setLoading, loading };
 } 
     
