@@ -1,4 +1,4 @@
-import { Link, useNavigate, } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Axios from "axios";
 import { useState, FormEvent } from "react";
 import { AuthCooker } from "../../context/auth";
@@ -12,12 +12,10 @@ export default function RegisterCooker () {
 
     const { setAuthCooker, datas } = AuthCooker();
 
-    const navigate = useNavigate();
-
     const validateDatas = (e: FormEvent) => {
-        e.preventDefault();
-
+        
         if(email.trim() === '' || password.trim() === '') {
+            e.preventDefault();
             return console.log("Errado")
         }
 
@@ -31,7 +29,6 @@ export default function RegisterCooker () {
         ));
 
         setAuthCooker(true);
-        return navigate("/cozinheiro/ver-pedidos");
     }
 
     return (
@@ -42,7 +39,7 @@ export default function RegisterCooker () {
                     <Link to="/cadastrar/cozinheiro">Cozinheiro</Link>
                 </div>
                 <h2>Criar conta como cozinheiro</h2>
-                <form onSubmit={validateDatas}>
+                <form onSubmit={validateDatas} action="/cozinheiro/ver-pedidos">
                     <input type="text" 
                     placeholder="Email"
                     onChange={e => setEmail(e.target.value)} />

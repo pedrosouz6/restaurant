@@ -21,8 +21,8 @@ export default function Request () {
 
     useEffect(() => {
         const user = localStorage.getItem('user');
-        setDataUser(JSON.parse(user));
-        setLoading(true)
+        setDataUser(JSON.parse(user));           
+        setLoading(true);
     }, []);
 
     console.log(loading)
@@ -37,7 +37,7 @@ export default function Request () {
 
                     <section className="section-cooker">
                         <div className="section-header">
-                            <h1>Ver pedidos </h1>
+                            <h1>Ver pedidos {loading && datasUser.user.email} </h1>
                         </div>
                         <div className="table">
                             <table>

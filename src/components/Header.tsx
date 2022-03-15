@@ -1,7 +1,18 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/header.scss";
 
 export default function Header() {
+
+    const [ datas, setDatas ] = useState([]);
+
+    useEffect(() => {
+        const datasLocal = localStorage.getItem('user');
+        if(datasLocal) {
+            return setDatas(JSON.parse(datasLocal));
+        }
+    }, [])
+    console.log(datas)
     return (
         <header id="header">
             <div className="center">
@@ -11,9 +22,7 @@ export default function Header() {
                     </div>
                     <nav>
                         <ul>
-                            <li><Link to="/cozinheiro/ver-pedidos">Ver pedidos cozinheiro</Link></li>
-                            <li><Link to="/cadastrar/garcom">Garçom</Link></li>
-                            <li><Link to="/cadastrar/cozinheiro">Cozinheiro</Link></li>
+                            { datas ? "teste" : "ruim" }
                         </ul>
                     </nav>
                 </div>
