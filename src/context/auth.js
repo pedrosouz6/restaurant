@@ -19,9 +19,7 @@ export default function AuthProvider({ children }) {
             navigate('/cozinheiro/ver-pedidos')
         } else {
             setAuthCooker(false);
-            navigate('/');
         }
-
     }, [])
         
 

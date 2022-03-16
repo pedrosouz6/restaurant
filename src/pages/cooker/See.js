@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { AuthCooker } from "../../context/auth";
 
 import "../../styles/seeCooker.scss";
+import { Axios } from "axios";
 
 // type UserType = {
 //     user: {
@@ -17,16 +18,24 @@ export default function Request () {
 
     const { loading, setLoading } = AuthCooker();
 
-    const [ datasUser, setDataUser ] = useState([]);
+    const [ datasUser, setDatasUser ] = useState([]);
 
     useEffect(() => {
         const user = localStorage.getItem('user');
-        setDataUser(JSON.parse(user));           
+
+        if(user) {
+            const userd = JSON.parse(user);
+            const datas = userd.user;
+            setDatasUser(datas)
+
+            const tokenUser = JSON.parse(user);
+            const token = tokenUser.token;
+
+            //Implementar auth jtw
+        }
+
         setLoading(true);
     }, []);
-
-    console.log(loading)
-
 
     return (
         <div id="page-cooker">
@@ -37,7 +46,7 @@ export default function Request () {
 
                     <section className="section-cooker">
                         <div className="section-header">
-                            <h1>Ver pedidos {loading && datasUser.user.email} </h1>
+                            <h1>Ver pedidos {loading && datasUser.email} </h1>
                         </div>
                         <div className="table">
                             <table>

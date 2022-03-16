@@ -5,14 +5,18 @@ import "../styles/header.scss";
 export default function Header() {
 
     const [ datas, setDatas ] = useState([]);
+    const [ loading, setLoading ] = useState(false);
 
     useEffect(() => {
         const datasLocal = localStorage.getItem('user');
         if(datasLocal) {
-            return setDatas(JSON.parse(datasLocal));
+            setDatas(JSON.parse(datasLocal));
+            setLoading(true);
+        } else {
+            setLoading(false);
         }
-    }, [])
-    console.log(datas)
+    }, []);
+
     return (
         <header id="header">
             <div className="center">
@@ -22,7 +26,13 @@ export default function Header() {
                     </div>
                     <nav>
                         <ul>
-                            { datas ? "teste" : "ruim" }
+                            { !loading ? (<> 
+
+                            <li><Link to="/cozinheiro/ver-pedidos">Ver pedidos cozinheiro</Link></li>
+                            <li><Link to="/cadastrar/garcom">Garçom</Link></li>
+                            <li><Link to="/cadastrar/cozinheiro">Cozinheiro</Link></li> </>) : 
+
+                            datas.user.email }
                         </ul>
                     </nav>
                 </div>
