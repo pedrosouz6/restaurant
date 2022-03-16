@@ -16,7 +16,7 @@ import { Axios } from "axios";
 
 export default function Request () {
 
-    const { loading, setLoading } = AuthCooker();
+    const { setDatas, datas } = AuthCooker();
 
     const [ datasUser, setDatasUser ] = useState([]);
 
@@ -26,7 +26,7 @@ export default function Request () {
         if(user) {
             const userd = JSON.parse(user);
             const datas = userd.user;
-            setDatasUser(datas)
+            setDatas(datas);
 
             const tokenUser = JSON.parse(user);
             const token = tokenUser.token;
@@ -34,8 +34,9 @@ export default function Request () {
             //Implementar auth jtw
         }
 
-        setLoading(true);
     }, []);
+    console.log(datas);
+    console.log('doewmk')
 
     return (
         <div id="page-cooker">
@@ -46,7 +47,7 @@ export default function Request () {
 
                     <section className="section-cooker">
                         <div className="section-header">
-                            <h1>Ver pedidos {loading && datasUser.email} </h1>
+                            <h1>Ver pedidos {datas.email} </h1>
                         </div>
                         <div className="table">
                             <table>
