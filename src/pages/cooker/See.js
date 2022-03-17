@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { AuthCooker } from "../../context/auth";
 
 import "../../styles/seeCooker.scss";
-import { Axios } from "axios";
 
 // type UserType = {
 //     user: {
@@ -18,8 +17,6 @@ export default function Request () {
 
     const { setDatas, datas } = AuthCooker();
 
-    const [ datasUser, setDatasUser ] = useState([]);
-
     useEffect(() => {
         const user = localStorage.getItem('user');
 
@@ -30,13 +27,9 @@ export default function Request () {
 
             const tokenUser = JSON.parse(user);
             const token = tokenUser.token;
-
-            //Implementar auth jtw
         }
 
     }, []);
-    console.log(datas);
-    console.log('doewmk')
 
     return (
         <div id="page-cooker">

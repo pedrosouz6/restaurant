@@ -1,14 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, FormEvent } from "react";
+import { AuthCooker } from "../../context/auth";
 import Axios from "axios";
 
 import "../../styles/login.scss";
 
 export default function FormCooker() {
 
+    const { setDatas, datas, setAuthCooker } = AuthCooker();
+    const navigate = useNavigate()
+
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
     const [ token, setToken ] = useState('');
+
 
     function submitLogin(e : FormEvent) {
         e.preventDefault();
@@ -21,8 +26,19 @@ export default function FormCooker() {
             email, 
             password
         })
-        .then(response => console.log(response));
+        .then(response => {
+            if(response.data.message) {
+                return console.log('Usuario não existe')
+            }
+
+            setDatas(response.data.user);
+            localStorage.setItem('user', JSON.stringify(response.data));
+            setAuthCooker(true);
+            navigate('/cozinheiro/ver-pedidos');
+        });
     }
+
+    console.log(datas)
 
     return (
         <div id="page-login">

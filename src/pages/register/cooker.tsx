@@ -50,16 +50,18 @@ export default function RegisterCooker () {
                     <Link to="/cadastrar/cozinheiro">Cozinheiro</Link>
                 </div>
                 <h2>Criar conta como cozinheiro</h2>
-                <form onSubmit={validateDatas} action="/cozinheiro/ver-pedidos">
+                <form onSubmit={validateDatas}>
+
                     <input type="text" 
                     placeholder="Email"
                     onChange={e => setEmail(e.target.value)} />
+
                     <input type="text" 
                     placeholder="Senha" 
                     onChange={e => setPassword(e.target.value)} />
                     <input type="submit" value="Criar conta" />
 
-                    <span><Link to="/login/garcom">Já tenho conta</Link></span>
+                    <span><Link to="/login/cozinheiro">Já tenho conta</Link></span>
                 </form> 
             </div>
         </div>
