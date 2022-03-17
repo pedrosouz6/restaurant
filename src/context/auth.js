@@ -13,14 +13,24 @@ export default function AuthProvider({ children }) {
 
     useEffect(() => {
         const user = localStorage.getItem('user');
-
+        
         if(user) {
-            setAuthCooker(true);
-            navigate('/cozinheiro/ver-pedidos')
+            const userObj = JSON.parse(user);
+            const typeUser = userObj.user.type;
+            console.log(typeUser)
+            
+            if(typeUser === '1') {
+                setAuthCooker(true);
+                navigate('/cozinheiro/ver-pedidos');
+            } else if(typeUser === '2'){
+                setAuthCooker(true);
+                navigate('/garcom/fazer-pedidos');
+            }
+
         } else {
             setAuthCooker(false);
         }
-    }, [])
+    }, []);
         
 
     return (
