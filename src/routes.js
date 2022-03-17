@@ -15,7 +15,7 @@ import RegisterWaiter from "./pages/register/waiter";
 
 export default function Routess() {
 
-    const PrivateSeeCooker = ({children}) => {
+    const Private = ({children}) => {
         const { authCooker } = AuthCooker();
         
         if(authCooker) {
@@ -30,11 +30,11 @@ export default function Routess() {
             <AuthProvider>
                 <Routes>
                     <Route path="/" element={ <Home /> } />
-                    <Route path="/garcom/fazer-pedidos" element={ <RequestWaiter /> } />
-                    <Route path="/garcom/menu" element={ <Menu /> } />
-                    <Route path="/garcom/ver-pedidos" element={ <See /> } />
+                    <Route path="/garcom/fazer-pedidos" element={ <Private> <RequestWaiter /> </Private> } />
+                    <Route path="/garcom/menu" element={  <Private> <Menu /> </Private> } />
+                    <Route path="/garcom/ver-pedidos" element={ <Private>  <See /> </Private> } />
                     <Route path="/cozinheiro/ver-pedidos" 
-                    element= { <PrivateSeeCooker> <SeeCooker /> </PrivateSeeCooker> } />
+                    element= { <Private> <SeeCooker /> </Private> } />
                     <Route path="/admin" element={ <Admin /> } />
                     <Route path="/login/cozinheiro" element={ <LoginCooker /> } />
                     <Route path="/login/garcom" element={ <LoginWaiter /> } />
