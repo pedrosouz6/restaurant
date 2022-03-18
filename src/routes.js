@@ -19,7 +19,7 @@ export default function Routess() {
         const { authCooker } = AuthCooker();
         
         if(authCooker) {
-            return children
+            return children;
         }
 
         return <Navigate to="/"/>
