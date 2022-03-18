@@ -4,9 +4,21 @@ import { MdMenuBook } from "react-icons/md";
 import { FaBookReader } from "react-icons/fa";
 import { BsPencilSquare } from "react-icons/bs";
 
+import { AuthCooker } from "../context/auth"; 
+
 import '../styles/aside.scss';
 
 export default function Aside() {
+
+    const { setAuthCooker } = AuthCooker();
+
+    function signOut() {
+        setAuthCooker(false);
+        localStorage.removeItem('user');
+
+        console.log('teste')
+    }
+
     return (
         <aside id="waiter-aside">
             <nav>
@@ -18,7 +30,7 @@ export default function Aside() {
             </nav>
 
             <div className="aside-footer">
-                <Link to="/"> <BsBoxArrowInLeft /> Sair da conta</Link>
+                <Link to="/" onClick={signOut}> <BsBoxArrowInLeft /> Sair da conta</Link>
             </div>
         </aside>
     )

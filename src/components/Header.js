@@ -10,7 +10,8 @@ export default function Header() {
     useEffect(() => {
         const datasLocal = localStorage.getItem('user');
         if(datasLocal) {
-            setDatas(JSON.parse(datasLocal));
+            const datasUser = JSON.parse(datasLocal);
+            setDatas(datasUser.user);
             setLoading(true);
         } else {
             setLoading(false);
@@ -32,7 +33,7 @@ export default function Header() {
                             <li><Link to="/cadastrar/garcom">Garçom</Link></li>
                             <li><Link to="/cadastrar/cozinheiro">Cozinheiro</Link></li> </>) : 
 
-                            datas.user.email }
+                            datas.name }
                         </ul>
                     </nav>
                 </div>

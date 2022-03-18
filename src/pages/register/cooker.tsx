@@ -7,6 +7,7 @@ import "../../styles/login.scss";
 
 export default function RegisterCooker () {
 
+    const [ name, setName ] = useState('');
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
 
@@ -19,11 +20,14 @@ export default function RegisterCooker () {
     const validateDatas = (e: FormEvent) => {
         e.preventDefault();
 
-        if(email.trim() === '' || password.trim() === '') {
+        const validate = name.trim() === '' || email.trim() === '' || password.trim() === '';
+
+        if(validate) {
             return console.log("Errado")
         }
 
         Axios.post('http://localhost:3333/register/cooker', {
+            name,
             email, 
             password
         })
@@ -53,11 +57,18 @@ export default function RegisterCooker () {
                 <form onSubmit={validateDatas}>
 
                     <input type="text" 
+                    placeholder="Nome"
+                    value={name}
+                    onChange={e => setName(e.target.value)} />
+
+                    <input type="text" 
                     placeholder="Email"
+                    value={email}
                     onChange={e => setEmail(e.target.value)} />
 
                     <input type="text" 
                     placeholder="Senha" 
+                    value={password}
                     onChange={e => setPassword(e.target.value)} />
                     <input type="submit" value="Criar conta" />
 
