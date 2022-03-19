@@ -1,5 +1,5 @@
 import Aside from "../../components/Aside";
-import Header from "../../components/Header";
+import Header from "../../components/HeaderWaiter";
 
 import '../../styles/request.scss';
 

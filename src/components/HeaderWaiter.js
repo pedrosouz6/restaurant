@@ -1,20 +1,20 @@
-import '../styles/components/header.scss';
+import '../styles/components/headerWaiter.scss';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
     return (
-        <header id='header1'>
+        <header id='header-waiter'>
             <div className="center">
                 <div className="header-page">
                     <div className="header-left">
                         <div className="logo">
-                            <h1>Restaurant</h1>
+                            <h1>Restaurant Waiter</h1>
                         </div>
                         <nav>
                             <ul>
-                                <li><a href="#">Ver os pedidos</a></li>
-                                <li><a href="#">Ver o cardapio</a></li>
-                                <li><a href="/admin/add-dish">Adicionar prato</a></li>
-                                <li><a href="#">Usuários</a></li>
+                                <li><Link to="/garcom/fazer-pedidos">Fazer o pedido</Link></li>
+                                <li><Link to="/garcom/ver-pedidos">Ver os pedidos</Link></li>
+                                <li><Link to="/cardapio">Ver o cardápio</Link></li>
                             </ul>
                         </nav>
                     </div>

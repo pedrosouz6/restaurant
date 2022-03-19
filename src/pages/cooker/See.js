@@ -1,8 +1,8 @@
-import Header from "../../components/Header";
-import AsideCooker from "../../components/AsideCooker";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { AuthCooker } from "../../context/auth";
 
+import Header from "../../components/HeaderCooker";
+import AsideCooker from "../../components/AsideCooker";
 import "../../styles/seeCooker.scss";
 
 // type UserType = {

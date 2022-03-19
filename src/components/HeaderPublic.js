@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "../styles/header.scss";
+import "../styles/components/headerPublic.scss";
 
 export default function Header() {
 
@@ -19,7 +19,7 @@ export default function Header() {
     }, []);
 
     return (
-        <header id="header">
+        <header id="header-public">
             <div className="center">
                 <div className="container-header">
                     <div className="logo-header">

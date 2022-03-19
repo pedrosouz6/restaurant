@@ -1,4 +1,4 @@
-import Header from '../../components/Header1';
+import Header from '../../components/HeaderAdmin';
 import  '../../styles/pages/menu.scss';
 import { AiOutlineSearch } from 'react-icons/ai';
 

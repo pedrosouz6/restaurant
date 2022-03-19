@@ -3,7 +3,7 @@ import { AuthCooker } from './context/auth';
 import AuthProvider from './context/auth';
 
 import See from './pages/waiter/See';
-import Home from './components/Header';
+import Home from './pages/home/Home';
 import RequestWaiter from './pages/waiter/Request';
 import Menu from './pages/menu/Menu';
 import SeeCooker from './pages/cooker/See';
@@ -30,14 +30,14 @@ export default function Routess() {
             <AuthProvider>
                 <Routes>
                     <Route path='/' element={ <Home /> } />
+                    <Route path='/cardapio' element={ <Menu /> } />
+                    <Route path='/admin/add-dish' element={ <AddDish /> } />
                     <Route path='/garcom/fazer-pedidos' element={ <Private> <RequestWaiter /> </Private> } />
-                    <Route path='/menu' element={ <Menu /> } />
                     <Route path='/garcom/ver-pedidos' element={ <Private>  <See /> </Private> } />
+                    <Route path='/login/garcom' element={ <LoginWaiter /> } />
                     <Route path='/cozinheiro/ver-pedidos' 
                     element= { <Private> <SeeCooker /> </Private> } />
-                    <Route path='/admin/add-dish' element={ <AddDish /> } />
                     <Route path='/login/cozinheiro' element={ <LoginCooker /> } />
-                    <Route path='/login/garcom' element={ <LoginWaiter /> } />
                     <Route path='/cadastrar/cozinheiro' element={ <RegisterCooker /> } />
                     <Route path='/cadastrar/garcom' element={ <RegisterWaiter /> } />
                     <Route path='*' element={ <Home /> } />

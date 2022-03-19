@@ -2,7 +2,7 @@ import { FaTrash } from 'react-icons/fa';
 import { GrUpdate } from 'react-icons/gr';
 import { IoMdSettings } from 'react-icons/io';
 
-import Header from '../../components/Header1';
+import Header from '../../components/HeaderAdmin';
 
 import '../../styles/Admin/addDish.scss';
 
