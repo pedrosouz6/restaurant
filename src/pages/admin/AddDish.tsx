@@ -1,11 +1,15 @@
-import '../../styles/Admin/add-dish.scss';
 import { FaTrash } from 'react-icons/fa';
 import { GrUpdate } from 'react-icons/gr';
 import { IoMdSettings } from 'react-icons/io';
 
+import Header from '../../components/Header1';
+
+import '../../styles/Admin/addDish.scss';
+
 export default function AddDish() {
     return (
         <section id='add-dish'>
+            <Header />
                 <div className="container-form">
                     <div className="headers-admin-pages">
                         <div className='center'>
@@ -36,6 +40,12 @@ export default function AddDish() {
                                 </tr>
                             </thead>
                             <tbody>
+                                <tr>
+                                    <td>Baiao de dois</td>
+                                    <td>Arroz, feijão, carne seca, vinagrete</td>
+                                    <td>R$ 45</td>
+                                    <td className='tb-act'><i><FaTrash /></i> <i><GrUpdate /></i> <i><IoMdSettings /></i></td>
+                                </tr>
                                 <tr>
                                     <td>Baiao de dois</td>
                                     <td>Arroz, feijão, carne seca, vinagrete</td>

@@ -1,0 +1,108 @@
+#menu-page {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(240, 240, 240);
+
+    #menu {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .header-menu {
+        width: 100%;
+        background-color: white;
+    }
+
+    .container-search {
+        display: flex;
+        padding: 15px 0;
+        align-items: center;
+        justify-content: space-between;
+
+        form {
+            width: 300px;
+            height: 40px;
+            position: relative;
+
+            input, i {
+                position: absolute;
+            }
+
+            input {
+                width: 100%;
+                height: 100%;
+                padding: 0 15px 0 35px;
+                left: 0;
+                top: 0;
+            }
+
+            i {
+                position: absolute;
+                display: block;
+                font-size: 20px;
+                top: 50%;
+                left: 10px;
+                transform: translateY(-40%);
+            }
+        }
+
+    }
+
+    .tb-dish-name {
+        width: 210px;
+    }
+
+    .tb-price {
+        width: 100px;
+    }
+    
+    .tb-actions {
+        width: 200px;
+    }
+
+    .note {
+        width: 330px;
+    }
+    
+    .tb-ingredients {
+        width: 600px;
+    }
+    
+    .tb-act {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .tb-act i {
+        display: block;
+        padding: 3px 4px 0 4px;
+        cursor: pointer;
+        font-size: 15px;
+    }
+    
+    table {
+        margin-top: 2rem;
+        border-collapse: collapse;
+        box-shadow: 1px 1px 10px rgba(51, 51, 51, .1);
+    }
+    
+    thead {
+        background-color: white;
+    }
+    
+    td {
+        padding: 13px 13px 13px 5px;
+    }
+    
+    thead td {
+        text-align: center;
+        font-weight: 500;
+        letter-spacing: .5px;
+    }
+    
+    table tbody tr:nth-child(even) {
+        background-color: white;
+    }
+}
