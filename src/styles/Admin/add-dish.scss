@@ -1,0 +1,128 @@
+#add-dish { 
+    .form-dish {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .container-form {
+        width: 100%;
+        height: auto;
+        padding: 1rem 0;
+        background-color: white;
+    }
+
+    .headers-admin-pages {
+        h2 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+    }
+
+    form {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+
+        input, textarea {
+            height: 40px;
+            border: 1px solid silver;
+            border-radius: 2px;
+            transition: .3s ease-in-out;
+            color: #333;
+        }
+
+        input:hover, 
+        textarea:hover {
+            border: 1px solid #333;
+        }
+        
+        textarea {
+            padding: 10px 5px;
+            resize: vertical;
+        }
+
+        input {
+            padding: 0 5px; 
+        }
+
+        input[type='submit'] {
+            width: 100px;
+            background-color: rgb(106, 90, 205);
+            color: white;
+            font-weight: 500;
+            text-shadow: 1px 1px 1px rgba(51, 51, 51, .4);
+            letter-spacing: .3px;
+            cursor: pointer;
+            border: none;
+        }
+
+        input[type='submit']:hover {
+            background-color: rgba(106, 90, 205, .8);
+        }
+        
+    }
+
+    #name-dish, .tb-dish-name {
+        width: 210px;
+    }
+    
+    #price-dish, .tb-price {
+        width: 100px;
+    }
+    
+    #ingredients {
+        width: 400px;
+    }
+    
+    #note {
+        width: 300px;
+    }
+
+    .tb-actions {
+        width: 200px;
+    }
+
+    .tb-ingredients {
+        width: 720px;
+    }
+
+    .tb-act {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .tb-act i {
+        display: block;
+        padding: 3px 4px 0 4px;
+        cursor: pointer;
+        font-size: 15px;
+    }
+    
+    table {
+        margin-top: 2rem;
+        border-collapse: collapse;
+        box-shadow: 1px 1px 10px rgba(51, 51, 51, .1);
+    }
+    
+    thead {
+        background-color: white;
+    }
+    
+    td {
+        padding: 13px 13px 13px 5px;
+    }
+
+    thead td {
+        text-align: center;
+        font-weight: 500;
+        letter-spacing: .5px;
+    }
+
+    table tbody tr:nth-child(even) {
+        background-color: white;
+    }
+
+}

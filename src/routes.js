@@ -5,7 +5,7 @@ import AuthProvider from './context/auth';
 import See from "./pages/waiter/See";
 import Home from "./components/Header";
 import RequestWaiter from "./pages/waiter/Request";
-import Menu from "./pages/waiter/Menu";
+import Menu from "./pages/menu/Menu";
 import SeeCooker from "./pages/cooker/See";
 import Admin from "./pages/admin/Admin";
 import LoginCooker from "./pages/login/cooker";
@@ -31,7 +31,7 @@ export default function Routess() {
                 <Routes>
                     <Route path="/" element={ <Home /> } />
                     <Route path="/garcom/fazer-pedidos" element={ <Private> <RequestWaiter /> </Private> } />
-                    <Route path="/garcom/menu" element={  <Private> <Menu /> </Private> } />
+                    <Route path="/menu" element={ <Menu /> } />
                     <Route path="/garcom/ver-pedidos" element={ <Private>  <See /> </Private> } />
                     <Route path="/cozinheiro/ver-pedidos" 
                     element= { <Private> <SeeCooker /> </Private> } />
