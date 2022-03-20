@@ -1,4 +1,5 @@
 import Header from "../../components/HeaderWaiter";
+import Search from "../../components/SearchDish";
 
 import '../../styles/request.scss';
 
@@ -7,12 +8,17 @@ export default function Waiter() {
         <div id="page-waiter">
             <Header/>
             <main>
-                <div className="center">
                     <div className="container">
                         <section id="section-see" >
-                            <div className="section-header">
-                                <h1>Ver os pedidos</h1>
+                            <div className="container-search-global">
+                                <div className="center">
+                                    <div className="container-search">
+                                        <h1>Ver os pedidos</h1>
+                                        <Search /> 
+                                    </div>
+                                </div>
                             </div>
+                        <div className="center">
 
                             <div className="table">
                                 <table>
@@ -47,8 +53,8 @@ export default function Waiter() {
                                     </tbody>
                                 </table>
                             </div>
-                        </section>
-                    </div>
+                        </div>
+                    </section>
                 </div>
             </main>
         </div>

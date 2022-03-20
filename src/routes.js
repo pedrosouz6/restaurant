@@ -46,9 +46,9 @@ export default function Routess() {
                     <Route path='/cadastrar/garcom' element={ <RegisterWaiter /> } />
                     <Route path='*' element={ <Home /> } />
                     {/* Menu */}
-                    <Route path='/admin/cardapio' element={ <MenuAdmin /> } />
-                    <Route path='/garcom/cardapio' element={ <MenuWaiter /> } />
-                    <Route path='/cozinheiro/cardapio' element={ <MenuCooker /> } />
+                    <Route path='/admin/cardapio' element={ <Private><MenuAdmin /></Private> } />
+                    <Route path='/garcom/cardapio' element={ <Private> <MenuWaiter /> </Private> } />
+                    <Route path='/cozinheiro/cardapio' element={ <Private> <MenuCooker /> </Private> } />
                 </Routes>
             </AuthProvider>
         </Router>

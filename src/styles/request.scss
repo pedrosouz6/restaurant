@@ -7,7 +7,7 @@
         flex-wrap: wrap;
         gap: 1rem;
     }
-
+    
     .section-header h1 {
         font-size: 24px;
         padding: 1rem 0 30px 0px;
@@ -15,6 +15,7 @@
     }
     
     #section-request {
+        padding-top: 2rem;
         flex: 1 1 300px;
         min-height: calc(100vh - 72px);
         max-height: auto;

@@ -11,3 +11,15 @@
     margin: 0 auto;
     padding: 0 20px;
 }
+
+.container-search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-search-global {
+    width: 100%;
+    padding: 15px 0;
+    background-color: white;
+}

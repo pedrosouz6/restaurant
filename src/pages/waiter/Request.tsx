@@ -8,13 +8,17 @@ export default function Waiter() {
         <div id="page-waiter">
             <Header/>
             <main>
+                <div className="container-search-global">
+                    <div className="center">
+                        <div className="container-search">
+                            <h1>Fazer pedido</h1>
+                            <Search /> 
+                        </div>
+                    </div>
+                </div>
                 <div className="center">
                     <div className="container">
                         <section id="section-request">
-                            <div className="section-header">
-                                <h1>Fazer os pedidos</h1>
-                                <Search />
-                            </div>
 
                             <div className="container-form">
                                 <form>

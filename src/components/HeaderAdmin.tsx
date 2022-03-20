@@ -1,4 +1,5 @@
 import '../styles/components/headerAdmin.scss';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
     return (
@@ -11,10 +12,10 @@ export default function Header() {
                         </div>
                         <nav>
                             <ul>
-                                <li><a href="#">Ver os pedidos</a></li>
-                                <li><a href="/cardapio">Ver o cardapio</a></li>
-                                <li><a href="/admin/add-dish">Adicionar prato</a></li>
-                                <li><a href="#">Usuários</a></li>
+                                <li><Link to="#">Ver os pedidos</Link></li>
+                                <li><Link to="/admin/cardapio">Ver o cardapio</Link></li>
+                                <li><Link to="/admin/add-dish">Adicionar prato</Link></li>
+                                <li><Link to="#">Usuários</Link></li>
                             </ul>
                         </nav>
                     </div>

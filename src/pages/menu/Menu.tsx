@@ -1,18 +1,32 @@
-import Header from '../../components/HeaderAdmin';
+import Search from '../../components/SearchDish';
 import  '../../styles/pages/menu.scss';
-import { AiOutlineSearch } from 'react-icons/ai';
-
+import { useEffect } from 'react';
+import { AuthCooker } from '../../context/auth';
+ 
 export default function Menu() {
+
+    const { setDatas, datas } = AuthCooker();
+
+    useEffect(() => {
+        const user = localStorage.getItem('user');
+
+        if(user) {
+            const userd = JSON.parse(user);
+            const datas = userd.user;
+            setDatas(datas);
+
+            const tokenUser = JSON.parse(user);
+            const token = tokenUser.token;
+        }
+    }, []);
+
     return (
         <div id="menu-page">
-            <div className="header-menu">
+            <div className="container-search-global">
                 <div className="center">
                     <div className="container-search">
                         <h2>Cardápio</h2>
-                        <form>
-                            <input type="text" placeholder='Pesquisar por prato' />
-                            <i> <AiOutlineSearch /> </i>
-                        </form>
+                        <Search />
                     </div>
                 </div>
             </div>
