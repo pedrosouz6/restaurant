@@ -34,11 +34,9 @@ export default function FormCooker() {
             setDatas(response.data.user);
             localStorage.setItem('user', JSON.stringify(response.data));
             setAuthCooker(true);
-            navigate('/garcom/ver-pedidos');
+            navigate('/garcom/fazer-pedidos');
         });
     }
-
-    console.log(datas)
 
     return (
         <div id='page-login'>

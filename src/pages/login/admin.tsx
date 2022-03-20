@@ -5,7 +5,7 @@ import Axios from "axios";
 
 import "../../styles/login.scss";
 
-export default function FormCooker() {
+export default function LoginAdmin() {
 
     const { setDatas, datas, setAuthCooker } = AuthCooker();
     const navigate = useNavigate()
@@ -22,7 +22,7 @@ export default function FormCooker() {
             return console.log('campo vazio(login cozinheiro)');
         }
 
-        Axios.post(`http://localhost:3333/login/cooker`, {
+        Axios.post(`http://localhost:3333/login/admin`, {
             email, 
             password
         })
@@ -34,18 +34,14 @@ export default function FormCooker() {
             setDatas(response.data.user);
             localStorage.setItem('user', JSON.stringify(response.data));
             setAuthCooker(true);
-            navigate('/cozinheiro/ver-pedidos');
+            navigate('/admin/cardapio');
         });
     }
 
     return (
         <div id="page-login">
             <div className="container">
-                <div className="choose-login">
-                    <Link to="/login/garcom">Garçom</Link>
-                    <Link to="/login/cozinheiro">Cozinheiro</Link>
-                </div>
-                <h2>Logar como Cozinheiro</h2>
+                <h2>Logar como Admin</h2>
                 <form onSubmit={submitLogin}>
                     <input type="text" 
                     placeholder="Email"

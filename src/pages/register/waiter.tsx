@@ -71,7 +71,7 @@ export default function RegisterCooker () {
                     onChange={e => setPassword(e.target.value)} />
                     <input type="submit" value="Criar conta" />
 
-                    <span><Link to="/login/cozinheiro">Já tenho conta</Link></span>
+                    <span><Link to="/login/garcom">Já tenho conta</Link></span>
                 </form> 
             </div>
         </div>

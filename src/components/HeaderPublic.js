@@ -31,6 +31,7 @@ export default function Header() {
 
                             <li><Link to="/cozinheiro/ver-pedidos">Ver pedidos cozinheiro</Link></li>
                             <li><Link to="/cadastrar/garcom">Garçom</Link></li>
+                            <li><Link to="/login/admin">Admin</Link></li>
                             <li><Link to="/cadastrar/cozinheiro">Cozinheiro</Link></li> </>) : 
 
                             datas.name }

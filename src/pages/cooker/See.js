@@ -39,7 +39,7 @@ export default function Request () {
                         <div className="container-search-global">
                             <div className="center">
                                 <div className="container-search">
-                                    <h1>Fazer pedido</h1>
+                                    <h1>Ver pedido</h1>
                                     <Search /> 
                                 </div>
                             </div>

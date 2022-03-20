@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 
+import BtnSignOut from './SignOut';
 import '../styles/components/headerCooker.scss';
 import { AuthCooker } from '../context/auth';
 
@@ -36,7 +37,7 @@ export default function Header() {
                         </nav>
                     </div>
                     <div className="header-right">
-                        <button>Sign out</button>
+                        <BtnSignOut />
                         <p>{datas.name}</p>
                     </div>
                 </div>

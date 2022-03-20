@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 
 import { AuthCooker } from '../context/auth';
 import '../styles/components/headerWaiter.scss';
+import BtnSignOut from './SignOut';
 
 export default function Header() {
 
@@ -38,7 +39,7 @@ export default function Header() {
                         </nav>
                     </div>
                     <div className="header-right">
-                        <button>Sign out</button>
+                        <BtnSignOut />
                         <p>{datas.name}</p>
                     </div>
                 </div>

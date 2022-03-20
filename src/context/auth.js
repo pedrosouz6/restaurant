@@ -17,7 +17,6 @@ export default function AuthProvider({ children }) {
         if(user) {
             const userObj = JSON.parse(user);
             const typeUser = userObj.user.type;
-            console.log(typeUser)
             
             if(typeUser === '1') {
                 setAuthCooker(true);
@@ -25,6 +24,9 @@ export default function AuthProvider({ children }) {
             } else if(typeUser === '2'){
                 setAuthCooker(true);
                 navigate('/garcom/fazer-pedidos');
+            } else if(typeUser === '3') {
+                setAuthCooker(true);
+                navigate('/admin/cardapio');
             }
 
         } else {
