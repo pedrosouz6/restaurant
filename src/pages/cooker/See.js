@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { AuthCooker } from "../../context/auth";
 
 import Header from "../../components/HeaderCooker";
-import AsideCooker from "../../components/AsideCooker";
 import "../../styles/seeCooker.scss";
 
 // type UserType = {
@@ -36,8 +35,6 @@ export default function Request () {
             <Header />
             <div className="center">
                 <div className="container">
-                    <AsideCooker />
-
                     <section className="section-cooker">
                         <div className="section-header">
                             <h1>Ver pedidos {datas.email} </h1>

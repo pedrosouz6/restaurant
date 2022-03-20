@@ -13,6 +13,10 @@ import LoginWaiter from './pages/login/waiter';
 import RegisterCooker from './pages/register/cooker';
 import RegisterWaiter from './pages/register/waiter';
 
+import MenuAdmin from './pages/menu/MenuAdmin';
+import MenuWaiter from './pages/menu/MenuWaiter';
+import MenuCooker from './pages/menu/MenuCooker';
+
 export default function Routess() {
 
     const Private = ({children}) => {
@@ -41,6 +45,10 @@ export default function Routess() {
                     <Route path='/cadastrar/cozinheiro' element={ <RegisterCooker /> } />
                     <Route path='/cadastrar/garcom' element={ <RegisterWaiter /> } />
                     <Route path='*' element={ <Home /> } />
+                    {/* Menu */}
+                    <Route path='/admin/cardapio' element={ <MenuAdmin /> } />
+                    <Route path='/garcom/cardapio' element={ <MenuWaiter /> } />
+                    <Route path='/cozinheiro/cardapio' element={ <MenuCooker /> } />
                 </Routes>
             </AuthProvider>
         </Router>

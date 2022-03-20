@@ -1,4 +1,3 @@
-import Aside from "../../components/Aside";
 import Header from "../../components/HeaderWaiter";
 
 import '../../styles/request.scss';
@@ -10,8 +9,6 @@ export default function Waiter() {
             <main>
                 <div className="center">
                     <div className="container">
-                        <Aside />
-
                         <section id="section-see" >
                             <div className="section-header">
                                 <h1>Ver os pedidos</h1>

@@ -1,5 +1,5 @@
-import Aside from "../../components/Aside";
 import Header from "../../components/HeaderWaiter";
+import Search from '../../components/SearchDish';
 
 import '../../styles/see.scss';
 
@@ -10,10 +10,10 @@ export default function Waiter() {
             <main>
                 <div className="center">
                     <div className="container">
-                        <Aside />
                         <section id="section-request">
                             <div className="section-header">
                                 <h1>Fazer os pedidos</h1>
+                                <Search />
                             </div>
 
                             <div className="container-form">

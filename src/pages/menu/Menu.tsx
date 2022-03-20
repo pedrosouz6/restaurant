@@ -5,8 +5,6 @@ import { AiOutlineSearch } from 'react-icons/ai';
 export default function Menu() {
     return (
         <div id="menu-page">
-            <Header/>
-
             <div className="header-menu">
                 <div className="center">
                     <div className="container-search">
