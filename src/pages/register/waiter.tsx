@@ -2,13 +2,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { FormEvent, useState } from "react";
 import Axios from "axios";
 
-import { AuthCooker } from "../../context/auth";
+import { useAuth } from "../../context/auth";
 
 import "../../styles/login.scss";
 
 export default function RegisterCooker () {
 
-    const { setAuthCooker, setDatas } = AuthCooker();
+    const { setAuthUser, setDatasUser } = useAuth();
     const navigate = useNavigate();
 
     const [ name, setName ] = useState('');
@@ -35,8 +35,8 @@ export default function RegisterCooker () {
                 }
                     
                 localStorage.setItem('user', JSON.stringify(response.data));
-                setDatas(response.data.user);
-                setAuthCooker(true);
+                setDatasUser(response.data.user);
+                setAuthUser(true);
                 navigate('/garcom/fazer-pedidos');
             });
         } else {

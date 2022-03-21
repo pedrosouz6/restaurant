@@ -1,15 +1,15 @@
-import { AuthCooker } from '../context/auth';
+import { useAuth } from '../context/auth';
 import { useNavigate } from 'react-router-dom';
 import '../styles/components/btnSignOut.scss';
 
 export default function BtnSignOut() {
 
     const navigate = useNavigate();
-    const { setAuthCooker } = AuthCooker();
+    const { setAuthUser } = useAuth();
 
     const signOut = () => {
         localStorage.removeItem('user');
-        setAuthCooker(false);
+        setAuthUser(false);
 
         navigate('/');
     }

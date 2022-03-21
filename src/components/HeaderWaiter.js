@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 
-import { AuthCooker } from '../context/auth';
+import { useAuth } from '../context/auth';
 import '../styles/components/headerWaiter.scss';
 import BtnSignOut from './SignOut';
 
 export default function Header() {
 
-    const { setDatas, datas } = AuthCooker();
+    const { setDatasUser, datasUser } = useAuth();
 
     useEffect(() => {
         const user = localStorage.getItem('user');
@@ -15,7 +15,7 @@ export default function Header() {
         if(user) {
             const userd = JSON.parse(user);
             const datas = userd.user;
-            setDatas(datas);
+            setDatasUser(datas);
 
             const tokenUser = JSON.parse(user);
             const token = tokenUser.token;
@@ -40,7 +40,7 @@ export default function Header() {
                     </div>
                     <div className="header-right">
                         <BtnSignOut />
-                        <p>{datas.name}</p>
+                        <p>{datasUser.name}</p>
                     </div>
                 </div>
             </div>

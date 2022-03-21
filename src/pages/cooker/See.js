@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { AuthCooker } from "../../context/auth";
+import { useAuth } from "../../context/auth";
 import Search from '../../components/SearchDish'
 
 import Header from "../../components/HeaderCooker";
@@ -15,7 +15,7 @@ import "../../styles/seeCooker.scss";
 
 export default function Request () {
 
-    const { setDatas, datas } = AuthCooker();
+    const { setDatasUser } = useAuth();
 
     useEffect(() => {
         const user = localStorage.getItem('user');
@@ -23,7 +23,7 @@ export default function Request () {
         if(user) {
             const userd = JSON.parse(user);
             const datas = userd.user;
-            setDatas(datas);
+            setDatasUser(datas);
 
             const tokenUser = JSON.parse(user);
             const token = tokenUser.token;

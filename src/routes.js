@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import { AuthCooker } from './context/auth';
+import { useAuth } from './context/auth';
 import AuthProvider from './context/auth';
 
 import See from './pages/waiter/See';
@@ -22,9 +22,9 @@ import MenuCooker from './pages/menu/MenuCooker';
 export default function Routess() {
 
     const Private = ({children}) => {
-        const { authCooker } = AuthCooker();
+        const { authUser } = useAuth();
         
-        if(authCooker) {
+        if(authUser) {
             return children;
         }
 

@@ -7,8 +7,8 @@ export default function AuthProvider({ children }) {
 
     const navigate = useNavigate();
 
-    const [ authCooker, setAuthCooker ] = useState(false);
-    const [ datas, setDatas ] = useState([]);
+    const [ authUser, setAuthUser ] = useState(false);
+    const [ datasUser, setDatasUser ] = useState([]);
     const [ loading, setLoading ] = useState(false);
 
     useEffect(() => {
@@ -19,30 +19,30 @@ export default function AuthProvider({ children }) {
             const typeUser = userObj.user.type;
             
             if(typeUser === '1') {
-                setAuthCooker(true);
+                setAuthUser(true);
                 navigate('/cozinheiro/ver-pedidos');
             } else if(typeUser === '2'){
-                setAuthCooker(true);
+                setAuthUser(true);
                 navigate('/garcom/fazer-pedidos');
             } else if(typeUser === '3') {
-                setAuthCooker(true);
+                setAuthUser(true);
                 navigate('/admin/cardapio');
             }
 
         } else {
-            setAuthCooker(false);
+            setAuthUser(false);
         }
     }, []);
         
 
     return (
         <AuthContext.Provider value={{
-            authCooker,
-            setAuthCooker,
-            setDatas,
-            setLoading,
+            authUser,
+            setAuthUser,
+            datasUser,
+            setDatasUser,
             loading,
-            datas,
+            setLoading,
         }}>
 
             { children }
@@ -51,9 +51,9 @@ export default function AuthProvider({ children }) {
     )
 }
 
-export const AuthCooker = () => {
+export const useAuth = () => {
     const context = useContext(AuthContext);
-    const { authCooker, setAuthCooker, setDatas, datas, setLoading, loading } = context;
-    return { authCooker, setAuthCooker, setDatas, datas, setLoading, loading };
+    const { authUser, setAuthUser, setDatasUser, datasUser, setLoading, loading } = context;
+    return { authUser, setAuthUser, setDatasUser, datasUser, setLoading, loading };
 } 
     

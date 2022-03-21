@@ -15,7 +15,6 @@ export default function AddDish() {
     const [ ingredients, setIngredients ] = useState('');
     const [ price, setPrice ] = useState('');
     const [ note, setNote ] = useState('');
-
     const [ message, setMessage ] = useState('');
 
     const sendAddDish = (e: FormEvent) => {

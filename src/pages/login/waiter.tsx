@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { AuthCooker } from '../../context/auth';
+import { useAuth } from '../../context/auth';
 import { useState, FormEvent } from 'react';
 import Axios from 'axios';
 
@@ -7,7 +7,7 @@ import '../../styles/login.scss';
 
 export default function FormCooker() {
 
-    const { setDatas, datas, setAuthCooker } = AuthCooker();
+    const { setDatasUser, setAuthUser } = useAuth();
     const navigate = useNavigate()
 
     const [ email, setEmail ] = useState('');
@@ -31,9 +31,9 @@ export default function FormCooker() {
 
             console.log(response);
 
-            setDatas(response.data.user);
+            setDatasUser(response.data.user);
             localStorage.setItem('user', JSON.stringify(response.data));
-            setAuthCooker(true);
+            setAuthUser(true);
             navigate('/garcom/fazer-pedidos');
         });
     }
