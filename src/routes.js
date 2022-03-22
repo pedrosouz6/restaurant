@@ -13,6 +13,8 @@ import AddDish from './pages/admin/AddDish';
 import RegisterCooker from './pages/register/cooker';
 import RegisterWaiter from './pages/register/waiter';
 
+import AllUsers from './pages/admin/AllUsers';
+
 import LoginAdmin from './pages/login/admin';
 import LoginCooker from './pages/login/cooker';
 import LoginWaiter from './pages/login/waiter';
@@ -58,6 +60,9 @@ export default function Routess() {
                         <Route path='/admin/cardapio' element={ <Private><MenuAdmin /></Private> } />
                         <Route path='/garcom/cardapio' element={ <Private> <MenuWaiter /> </Private> } />
                         <Route path='/cozinheiro/cardapio' element={ <Private> <MenuCooker /> </Private> } />
+
+                        {/* Admin */}
+                        <Route path='/admin/todos-usuarios' element={<Private> <AllUsers /> </Private>} />
                     </Routes>
                 </AuthProvider>
             </DatasDishProvider>
