@@ -2,10 +2,20 @@ import Search from '../../components/SearchDish';
 import  '../../styles/pages/menu.scss';
 import { useEffect } from 'react';
 import { useAuth } from '../../context/auth';
+import { useDatasDish } from '../../context/datasDish';
+
+type TypeUserData = {
+    id_dish: string;
+    name_dish: string;
+    ingredients_dish: string;
+    price_dish: string;
+    note_dish: string;
+}
  
 export default function Menu() {
 
     const { setDatasUser } = useAuth();
+    const { datasDish } = useDatasDish();
 
     useEffect(() => {
         const user = localStorage.getItem('user');
@@ -43,22 +53,14 @@ export default function Menu() {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Baiao de dois</td>
-                                <td>Arroz, feijão, carne seca, vinagrete</td>
-                                <td>R$ 45</td>
-                            </tr>
-                            <tr>
-                                <td>Baiao de dois</td>
-                                <td>Arroz, feijão, carne seca, vinagrete</td>
-                                <td>R$ 45</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Baiao de dois</td>
-                                <td>Arroz, feijão, carne seca, vinagrete</td>
-                                <td>R$ 45</td>
-                            </tr>
+                            {datasDish.map((item: TypeUserData, key: string) => (
+                                <tr key={key}>
+                                    <td>{ item.name_dish }</td>
+                                    <td>{ item.ingredients_dish }</td>
+                                    <td>R$ { item.price_dish }</td>
+                                    <td>{ item.note_dish === '' ? 'Nenhuma observação' : item.note_dish}</td>
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
                 </section>

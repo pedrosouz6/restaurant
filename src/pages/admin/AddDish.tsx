@@ -3,13 +3,24 @@ import { GrUpdate } from 'react-icons/gr';
 import { IoMdSettings } from 'react-icons/io';
 
 import { useState, FormEvent } from 'react';
+import { useDatasDish } from '../../context/datasDish';
 import Axios from 'axios';
 
 import Header from '../../components/HeaderAdmin';
 
 import '../../styles/Admin/addDish.scss';
 
+type TypeUserData = {
+    id_dish: string;
+    name_dish: string;
+    ingredients_dish: string;
+    price_dish: string;
+    note_dish: string;
+}
+
 export default function AddDish() {
+
+    const { datasDish, setCallApi, callApi } = useDatasDish();
 
     const [ nameDish, setNameDish ] = useState('');
     const [ ingredients, setIngredients ] = useState('');
@@ -33,14 +44,13 @@ export default function AddDish() {
         })
         .then(response => {
             if(response.data.message) {
+                setCallApi(!callApi);
                 return setMessage(response.data.message);
             }
 
-            return console.log('erro ao cadastrar um prato')
-        })
+            return console.log('erro ao cadastrar um prato');
+        });
     }
-
-    console.log(message)
 
     return (
         <section id='add-dish'>
@@ -92,24 +102,14 @@ export default function AddDish() {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Baiao de dois</td>
-                                    <td>Arroz, feijão, carne seca, vinagrete</td>
-                                    <td>R$ 45</td>
-                                    <td className='tb-act'><i><FaTrash /></i> <i><GrUpdate /></i> <i><IoMdSettings /></i></td>
-                                </tr>
-                                <tr>
-                                    <td>Baiao de dois</td>
-                                    <td>Arroz, feijão, carne seca, vinagrete</td>
-                                    <td>R$ 45</td>
-                                    <td className='tb-act'><i><FaTrash /></i> <i><GrUpdate /></i> <i><IoMdSettings /></i></td>
-                                </tr>
-                                <tr>
-                                    <td>Baiao de dois</td>
-                                    <td>Arroz, feijão, carne seca, vinagrete</td>
-                                    <td>R$ 45</td>
-                                    <td className='tb-act'><i><FaTrash /></i> <i><GrUpdate /></i> <i><IoMdSettings /></i></td>
-                                </tr>
+                                {datasDish.map((item: TypeUserData, key: string) => (
+                                    <tr key={key}>
+                                        <td>{ item.name_dish }</td>
+                                        <td>{ item.ingredients_dish }</td>
+                                        <td>R$ { item.price_dish }</td>
+                                        <td className='tb-act'><i><FaTrash /></i> <i><GrUpdate /></i> <i><IoMdSettings /></i></td>
+                                    </tr>
+                                ))}
                             </tbody>
                         </table>
                     </div>

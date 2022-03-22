@@ -1,14 +1,36 @@
-import { createContext, useState, useContext, useEffect } from "react";
+import { createContext, useState, useContext, useEffect, ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 
-const AuthContext = createContext();
 
-export default function AuthProvider({ children }) {
+type TypeChildren = {
+    children: ReactNode
+}
+
+type TypeDatasUser = {
+    datasUser: {
+        name: string;
+        email: string;
+        password: string
+    };
+}
+
+type TypeAuthContext = {
+    datasUser: any;
+    authUser: boolean;
+    loading: boolean;
+    setAuthUser: any;
+    setDatasUser: any;
+    setLoading: any;
+}
+
+const AuthContext = createContext({} as TypeAuthContext);
+
+export default function AuthProvider({ children } : TypeChildren) {
 
     const navigate = useNavigate();
 
     const [ authUser, setAuthUser ] = useState(false);
-    const [ datasUser, setDatasUser ] = useState([]);
+    const [ datasUser, setDatasUser ] = useState({} as TypeDatasUser );
     const [ loading, setLoading ] = useState(false);
 
     useEffect(() => {
