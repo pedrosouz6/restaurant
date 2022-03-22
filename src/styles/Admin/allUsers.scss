@@ -1,5 +1,23 @@
 #all-users {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: auto;
     background-color: rgb(240, 240, 240);
+
+    .container-users {
+        max-width: 800px;
+        margin: 0 auto;
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            padding: 25px 5px 10px 5px;
+            border-bottom: 2px solid white;
+        }
+    }
+
 }

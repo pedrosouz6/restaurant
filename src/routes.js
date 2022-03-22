@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import { useAuth } from './context/auth';
 
 import AuthProvider from './context/auth';
-import DatasDishProvider from './context/datasDish';
+import DatasDishProvider from './context/dish';
 
 import See from './pages/waiter/See';
 import Home from './pages/home/Home';

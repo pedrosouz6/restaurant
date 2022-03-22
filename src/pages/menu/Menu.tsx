@@ -2,7 +2,7 @@ import Search from '../../components/SearchDish';
 import  '../../styles/pages/menu.scss';
 import { useEffect } from 'react';
 import { useAuth } from '../../context/auth';
-import { useDatasDish } from '../../context/datasDish';
+import { useDatasDish } from '../../context/dish';
 
 type TypeUserData = {
     id_dish: string;

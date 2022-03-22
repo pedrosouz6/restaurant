@@ -3,7 +3,7 @@ import { GrUpdate } from 'react-icons/gr';
 import { IoMdSettings } from 'react-icons/io';
 
 import { useState, FormEvent } from 'react';
-import { useDatasDish } from '../../context/datasDish';
+import { useDatasDish } from '../../context/dish';
 import Axios from 'axios';
 
 import Header from '../../components/HeaderAdmin';
