@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react';
 import Axios from 'axios';
 
+import { FaTrash } from 'react-icons/fa';
+import { GrUpdate } from 'react-icons/gr';
+import { IoMdSettings } from 'react-icons/io';
+
 import Header from '../../components/HeaderAdmin';
 import Search from '../../components/SearchDish';
 
@@ -37,26 +41,24 @@ export default function AllUsers() {
                 <div className="center">
                     <div className="container-search">
                         <h1>Ver todos usuários</h1>
+                            <select onChange={e => setValueSelect(e.target.value)}>
+                                <option value='none'>Escolha o tipo de usuario</option>
+                                <option value='waiter'>Garçom</option>
+                                <option value='cooker'>Cozinheiro</option>
+                            </select>
                         <Search />
                     </div>
-                </div>
-                <div className="select">
-                    <select onChange={e => setValueSelect(e.target.value)}>
-                        <option value='none'>Escolha o tipo de usuario</option>
-                        <option value='waiter'>Garçom</option>
-                        <option value='cooker'>Cozinheiro</option>
-                    </select>
                 </div>
             </div>
                 <div className="center">
                     <div className="container-users">
                             {!message ? users.map((item : TypeUsers, key : string) => (
                                 <ul key={key}>
-                                    <li><span>{item.name} | {item.email} </span> <span>Del, Uptd, Right</span></li>
+                                    <li><span>{item.name} | {item.email} </span> <span><i><FaTrash /></i> <i><GrUpdate /></i> <i><IoMdSettings /></i></span></li>
                                 </ul>
                             )) : 
 
-                            'Escolha o tipo de usuario'}
+                            (<p>Escolha o tipo de usuario</p>)}
                         
                     </div>
                 </div>
