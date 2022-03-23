@@ -54,7 +54,7 @@ export default function AllUsers() {
                     <div className="container-users">
                             {!message ? users.map((item : TypeUsers, key : string) => (
                                 <ul key={key}>
-                                    <li><span>{item.name} | {item.email} </span> <span><i><FaTrash /></i> <i><GrUpdate /></i> <i><IoMdSettings /></i></span></li>
+                                    <li><span>{item.name} | {item.email} </span> <span className='actions'><i><FaTrash /></i> <i><GrUpdate /></i> <i><IoMdSettings /></i></span></li>
                                 </ul>
                             )) : 
 
