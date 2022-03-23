@@ -48,7 +48,7 @@ export default function AuthProvider({ children } : TypeChildren) {
                 navigate('/garcom/fazer-pedidos');
             } else if(typeUser === '3') {
                 setAuthUser(true);
-                navigate('/admin/todos-usuarios');
+                navigate('/admin/cardapio');
             }
 
         } else {
