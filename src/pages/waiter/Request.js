@@ -1,9 +1,42 @@
 import Header from "../../components/HeaderWaiter";
 import Search from '../../components/SearchDish';
+import { useRequest } from '../../context/requests';
+
+import { useState } from 'react';
+import Axios from 'axios';
 
 import '../../styles/see.scss';
 
 export default function Waiter() {
+
+    const { requests, loopApi, setLoopApi } = useRequest();
+
+    const [ dish, setDish ] = useState('');
+    const [ table, setTable ] = useState('');
+
+
+    function sendRequest(e) {
+        e.preventDefault();
+
+        const validate = dish.trim() === '' || table.trim() === '';
+
+        if(validate) {
+            return console.log('vazio');
+        }
+
+        const getUser = localStorage.getItem('user');
+        const user = JSON.parse(getUser);
+        const userId = user.user.id;
+
+        Axios.post('http://localhost:3333/add/request', {
+            userId,
+            dish,
+            table
+        });
+
+        setLoopApi(!loopApi);
+    } 
+
     return (
         <div id="page-waiter">
             <Header/>
@@ -21,9 +54,18 @@ export default function Waiter() {
                         <section id="section-request">
 
                             <div className="container-form">
-                                <form>
-                                    <input id="dish" type="text" placeholder="Digite o prato" />
-                                    <input id="table" type="number" placeholder="Mesa" />
+                                <form onSubmit={sendRequest}>
+                                    <input id="dish" 
+                                    type="text" 
+                                    placeholder="Digite o prato"
+                                    value={dish}
+                                    onChange={e => setDish(e.target.value)} />
+
+                                    <input id="table" 
+                                    type="number"
+                                    placeholder="Mesa"
+                                    value={table}
+                                    onChange={e => setTable(e.target.value)} />
                                     <input id="submit" type="submit" value="Enviar" />
                                 </form>
                             </div>
@@ -42,7 +84,7 @@ export default function Waiter() {
                                         <p>Em andamento</p>
                                     </div>
                                     <div className="cards" id="request" >
-                                        <span>110</span>
+                                        <span>{ requests.length }</span>
                                         <p>Pedidos feitos</p>
                                     </div>
                                 </div>

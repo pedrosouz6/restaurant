@@ -1,7 +1,6 @@
 import { createContext, useState, useContext, useEffect, ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 
-
 type TypeChildren = {
     children: ReactNode
 }

@@ -5,17 +5,12 @@ import Search from '../../components/SearchDish'
 import Header from "../../components/HeaderCooker";
 import "../../styles/seeCooker.scss";
 
-// type UserType = {
-//     user: {
-//         email: string;
-//         password: string
-//     };
-//     token: string
-// }
+import { useRequest } from '../../context/requests';
 
 export default function Request () {
 
     const { setDatasUser } = useAuth();
+    const { requests } = useRequest();
 
     useEffect(() => {
         const user = localStorage.getItem('user');
@@ -55,6 +50,13 @@ export default function Request () {
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        { requests.map((item, key) => (
+                                            <tr key={key}>
+                                                <td>{ item.name_request }</td>
+                                                <td className="number-table">{ item.table_request }</td>
+                                                <td className="in-process">{ item.status_request }</td>
+                                            </tr>
+                                        )) }
                                         <tr>
                                             <td>Feijoda</td>
                                             <td className="number-table">04</td>

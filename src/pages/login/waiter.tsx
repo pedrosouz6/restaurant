@@ -2,12 +2,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/auth';
 import { useState, FormEvent } from 'react';
 import Axios from 'axios';
+import { useRequest } from '../../context/requests';
 
 import '../../styles/login.scss';
 
 export default function FormCooker() {
 
     const { setDatasUser, setAuthUser } = useAuth();
+    const { loopApi, setLoopApi } = useRequest();
     const navigate = useNavigate()
 
     const [ email, setEmail ] = useState('');
@@ -35,6 +37,7 @@ export default function FormCooker() {
             localStorage.setItem('user', JSON.stringify(response.data));
             setAuthUser(true);
             navigate('/garcom/fazer-pedidos');
+            setLoopApi(!loopApi);
         });
     }
 
