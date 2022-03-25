@@ -13,7 +13,6 @@ export default function Request () {
     const { setDatasUser } = useAuth();
     const { loopApi } = useRequest();
     const [ datas, setDatas ] = useState([]);
-    const [ status, setStatus ] = useState(null);
 
     useEffect(() => {
         const user = localStorage.getItem('user');
@@ -31,6 +30,13 @@ export default function Request () {
         }
 
     }, [loopApi]);
+
+    console.log(datas)
+
+    function updateStatus(id, status) {
+        console.log({id, status});
+        Axios.put(`http://localhost:3333/update/request/${id}/${status}`)
+    }
 
     return (
         <div id="page-cooker">
@@ -51,6 +57,7 @@ export default function Request () {
                                     <thead>
                                         <tr>
                                             <td>Prato</td>
+                                            <td>Ingredientes</td>
                                             <td>Mesa</td>
                                             <td>Status do pedido</td>
                                         </tr>
@@ -59,12 +66,13 @@ export default function Request () {
                                         { datas.map((item, key) => (
                                             <tr key={key}>
                                                 <td>{ item.name_request }</td>
+                                                <td>{ item.name_request }</td>
                                                 <td className="number-table">{ item.table_request }</td>
                                                 <td> 
-                                                    <select>
-                                                        <option>Visto</option>
-                                                        <option>Em andamento</option>
-                                                        <option>Pronto</option>
+                                                    <select onChange={e => updateStatus(item.id_request, e.target.value)}>
+                                                        <option value='1'>Recebido</option>
+                                                        <option value='2'>Em andamento</option>
+                                                        <option value='3'>Pronto</option>
                                                     </select> 
                                                 </td>
                                             </tr>
