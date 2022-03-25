@@ -1,6 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAuth } from "../../context/auth";
-import Search from '../../components/SearchDish'
+import Search from '../../components/SearchDish';
+import Axios from 'axios';
 
 import Header from "../../components/HeaderCooker";
 import "../../styles/seeCooker.scss";
@@ -10,7 +11,9 @@ import { useRequest } from '../../context/requests';
 export default function Request () {
 
     const { setDatasUser } = useAuth();
-    const { requests } = useRequest();
+    const { loopApi } = useRequest();
+    const [ datas, setDatas ] = useState([]);
+    const [ status, setStatus ] = useState(null);
 
     useEffect(() => {
         const user = localStorage.getItem('user');
@@ -22,9 +25,12 @@ export default function Request () {
 
             const tokenUser = JSON.parse(user);
             const token = tokenUser.token;
+
+            Axios.get('http://localhost:3333/get/all/request')
+            .then(response => setDatas(response.data))
         }
 
-    }, []);
+    }, [loopApi]);
 
     return (
         <div id="page-cooker">
@@ -50,11 +56,17 @@ export default function Request () {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        { requests.map((item, key) => (
+                                        { datas.map((item, key) => (
                                             <tr key={key}>
                                                 <td>{ item.name_request }</td>
                                                 <td className="number-table">{ item.table_request }</td>
-                                                <td className="in-process">{ item.status_request }</td>
+                                                <td> 
+                                                    <select>
+                                                        <option>Visto</option>
+                                                        <option>Em andamento</option>
+                                                        <option>Pronto</option>
+                                                    </select> 
+                                                </td>
                                             </tr>
                                         )) }
                                         <tr>

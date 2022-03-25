@@ -38,7 +38,13 @@ export default function Waiter() {
                                                 <tr key={key}>
                                                     <td>{ item.name_request }</td>
                                                     <td className="number-table">{ item.table_request }</td>
-                                                    <td className="in-process">{ item.status_request }</td>
+                                                    <td className={ 
+                                                        item.status_request === 1 ? 'delivered' : item.status_request === 2 ? 'in-process' :
+                                                        item.status_request === 3 ? 'finishid' : 'finishid'}>
+
+                                                        { item.status_request === 1 ? 'Pedidos Feito' : item.status_request === 2 ? 'Fazendo Pedido' :
+                                                        item.status_request === 3 ? 'pronto' : 'err'}
+                                                    </td>
                                                 </tr>
                                             )) }
                                             <tr>
