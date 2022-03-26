@@ -7,6 +7,8 @@ export default function ProviderContext({ children }) {
 
     const [ requests, setRequests ] = useState([]);
     const [ loopApi, setLoopApi ] = useState(false);
+    const [ requestFinishid, setRequestFinishid ] = useState([]);
+    const [ requestInProgress, setRequestInProgress ] = useState([]);
 
     useEffect(() => {
         const getUser = localStorage.getItem('user');
@@ -14,8 +16,21 @@ export default function ProviderContext({ children }) {
         if(getUser) {
             const user = JSON.parse(getUser);
             const userId = user.user.id;
-            Axios.get(`http://localhost:3333/get/request/${userId}`)
-            .then(response => setRequests(response.data));
+            const userType = user.user.type;
+            
+            if(userType == 2) {
+                Axios.get(`http://localhost:3333/get/request/${userId}`)
+                .then(response => {
+                    const data = response.data;
+                    if(data){
+                        setRequests(response.data);
+                        const finishid = data.filter(item => item.status_request == 3);
+                        const inProgress = data.filter(item => item.status_request == 2);
+                        setRequestFinishid(finishid)
+                        setRequestInProgress(inProgress);
+                    }
+                });
+            }
         }
     }, [loopApi]);
 
@@ -24,7 +39,9 @@ export default function ProviderContext({ children }) {
             requests,
             setRequests,
             loopApi,
-            setLoopApi
+            setLoopApi,
+            requestFinishid,
+            requestInProgress
         }}>
 
             { children }
@@ -35,6 +52,6 @@ export default function ProviderContext({ children }) {
 
 export function useRequest(){
     const context = useContext(RequestContext);
-    const { requests, setRequests, loopApi, setLoopApi } = context;
-    return { requests, setRequests, loopApi, setLoopApi };
+    const { requests, setRequests, loopApi, setLoopApi, requestFinishid, requestInProgress } = context;
+    return { requests, setRequests, loopApi, setLoopApi, requestFinishid, requestInProgress };
 }

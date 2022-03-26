@@ -24,6 +24,8 @@ export default function ProviderDatasDish({ children }: TypeProviderDatasDish) {
         .then(response => setDatasDish(response.data))
     }, [callApi]);
 
+    console.log(datasDish)
+
     return (
         <DatasDishContext.Provider value={{
             datasDish,

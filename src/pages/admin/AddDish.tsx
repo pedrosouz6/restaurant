@@ -52,6 +52,11 @@ export default function AddDish() {
         });
     }
 
+    function deleteDish(id: string) {
+        Axios.delete(`http://localhost:3333/delete/dish/${id}`);
+        setCallApi(!callApi);
+    }
+
     return (
         <section id='add-dish'>
             <Header />
@@ -107,7 +112,12 @@ export default function AddDish() {
                                         <td>{ item.name_dish }</td>
                                         <td>{ item.ingredients_dish }</td>
                                         <td>R$ { item.price_dish }</td>
-                                        <td className='tb-act'><i><FaTrash /></i> <i><GrUpdate /></i> <i><IoMdSettings /></i></td>
+                                        <td className='tb-act'>
+                                            <i onClick={() => deleteDish(item.id_dish)}> <FaTrash /> </i> 
+                                            <i><GrUpdate /></i>
+                                            <i><IoMdSettings />
+                                            </i>
+                                        </td>
                                     </tr>
                                 ))}
                             </tbody>

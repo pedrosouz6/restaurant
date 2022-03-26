@@ -1,6 +1,7 @@
 import Header from "../../components/HeaderWaiter";
 import Search from '../../components/SearchDish';
 import { useRequest } from '../../context/requests';
+import { useDatasDish } from '../../context/dish';
 
 import { useState } from 'react';
 import Axios from 'axios';
@@ -9,14 +10,16 @@ import '../../styles/see.scss';
 
 export default function Waiter() {
 
-    const { requests, loopApi, setLoopApi } = useRequest();
+    const { datasDish } = useDatasDish();
+    const { requests, loopApi, setLoopApi, requestFinishid, requestInProgress } = useRequest();
+    console.log(requests)
 
     const [ dish, setDish ] = useState('');
     const [ table, setTable ] = useState('');
 
-
     function sendRequest(e) {
         e.preventDefault();
+        console.log(dish)
 
         const validate = dish.trim() === '' || table.trim() === '';
 
@@ -55,11 +58,12 @@ export default function Waiter() {
 
                             <div className="container-form">
                                 <form onSubmit={sendRequest}>
-                                    <input id="dish" 
-                                    type="text" 
-                                    placeholder="Digite o prato"
-                                    value={dish}
-                                    onChange={e => setDish(e.target.value)} />
+                                    <select onChange={e => setDish(e.target.value)}>
+                                        <option value=''>Escolha o prato</option>
+                                        {datasDish.map((item, key) => (
+                                            <option key={key} value={item.name_dish}>{item.name_dish}</option>
+                                        ))}
+                                    </select>
 
                                     <input id="table" 
                                     type="number"
@@ -76,11 +80,11 @@ export default function Waiter() {
                                 </div>
                                 <div className="container-cards">
                                     <div className="cards" id="finishid" >
-                                        <span>110</span>
+                                        <span>{ requestFinishid.length }</span>
                                         <p>Pedidos finalizados</p>
                                     </div>
                                     <div className="cards" id="in-progress" >
-                                        <span>110</span>
+                                        <span>{ requestInProgress.length }</span>
                                         <p>Em andamento</p>
                                     </div>
                                     <div className="cards" id="request" >
