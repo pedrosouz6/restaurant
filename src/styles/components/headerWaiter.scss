@@ -1,15 +1,16 @@
 #header-waiter {
     width: 100%;
+    border-bottom: 2px solid white;
     background-color: rgb(106, 90, 205);
 
     .logo h1 {
         color: white;
-        font-weight: 500;
+        letter-spacing: .4px;
     }
     
     .header-page {
         width: 100%;
-        height: 70px;
+        height: 68px;
         display: flex;
         justify-content: space-between;
         align-items: center;

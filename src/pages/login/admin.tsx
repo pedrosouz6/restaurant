@@ -2,8 +2,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState, FormEvent } from "react";
 import { useAuth } from "../../context/auth";
 import Axios from "axios";
+import Header from '../../components/HeaderPublic';
 
-import "../../styles/login.scss";
+import "../../styles/pages/login.scss";
 
 export default function LoginAdmin() {
 
@@ -40,6 +41,7 @@ export default function LoginAdmin() {
 
     return (
         <div id="page-login">
+            <Header/>
             <div className="container">
                 <h2>Logar como Admin</h2>
                 <form onSubmit={submitLogin}>

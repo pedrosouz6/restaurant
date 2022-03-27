@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../../context/auth";
-import Search from '../../components/SearchDish';
 import Axios from 'axios';
 
 import Header from "../../components/HeaderCooker";
@@ -34,9 +33,8 @@ export default function Request () {
     console.log(datas)
 
     function updateStatus(id, status) {
-        console.log({id, status});
         Axios.put(`http://localhost:3333/update/request/${id}/${status}`)
-    }
+    };
 
     return (
         <div id="page-cooker">
@@ -47,7 +45,6 @@ export default function Request () {
                             <div className="center">
                                 <div className="container-search">
                                     <h1>Ver pedido</h1>
-                                    <Search /> 
                                 </div>
                             </div>
                         </div>

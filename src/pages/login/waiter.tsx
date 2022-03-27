@@ -4,7 +4,7 @@ import { useState, FormEvent } from 'react';
 import Axios from 'axios';
 import { useRequest } from '../../context/requests';
 
-import '../../styles/login.scss';
+import "../../styles/pages/login.scss";
 
 export default function FormCooker() {
 

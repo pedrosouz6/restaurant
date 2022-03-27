@@ -3,7 +3,7 @@ import { useState, FormEvent } from "react";
 import { useAuth } from "../../context/auth";
 import Axios from "axios";
 
-import "../../styles/login.scss";
+import "../../styles/pages/login.scss";
 
 export default function FormCooker() {
 

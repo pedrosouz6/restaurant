@@ -22,8 +22,10 @@ export default function Menu() {
 
     const dataFilter = datasDish.filter((item: TypeUserData) => {
         const dishName = item.name_dish;
+        
         const dishNameLower = dishName.toLowerCase(); 
         const searchFilterLower = searchFilter.toLowerCase();
+
         return dishNameLower.includes(searchFilterLower);
     });
 
