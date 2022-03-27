@@ -43,20 +43,22 @@ export default function LoginAdmin() {
         <div id="page-login">
             <Header/>
             <div className="container">
-                <h2>Logar como Admin</h2>
-                <form onSubmit={submitLogin}>
-                    <input type="text" 
-                    placeholder="Email"
-                    onChange={e => setEmail(e.target.value)} />
+                <div className="container-form">
+                    <h2>Logar como Admin</h2>
+                    <form onSubmit={submitLogin}>
+                        <input type="text" 
+                        placeholder="Email"
+                        onChange={e => setEmail(e.target.value)} />
 
-                    <input type="text" 
-                    placeholder="Senha"
-                    onChange={e => setPassword(e.target.value)} />
+                        <input type="text" 
+                        placeholder="Senha"
+                        onChange={e => setPassword(e.target.value)} />
 
-                    <input type="submit" value="Entrar" />
+                        <input type="submit" value="Entrar" />
 
-                    <span><Link to="/">Esqueceu a senha?</Link></span>
-                </form>
+                        <span><Link to="/">Esqueceu a senha?</Link></span>
+                    </form>
+                </div>
             </div>
         </div>
     )

@@ -1,6 +1,7 @@
 #page-waiter {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: auto;
     background-color: rgb(240, 240, 240);
     
     #section-see {

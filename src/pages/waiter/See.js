@@ -1,9 +1,8 @@
 import Header from "../../components/HeaderWaiter";
-import Search from "../../components/SearchDish";
 
 import { useRequest } from '../../context/requests';
 
-import '../../styles/request.scss';
+import '../../styles/see.scss';
 
 export default function Waiter() {
 

@@ -1,5 +1,6 @@
 #page-waiter {
     width: 100%;
+ 
     
     .container {
         display: flex;
@@ -17,9 +18,6 @@
     #section-request {
         padding-top: 2rem;
         flex: 1 1 300px;
-        min-height: calc(100vh - 72px);
-        max-height: auto;
-
 
         .container-form {
             width: 100%;

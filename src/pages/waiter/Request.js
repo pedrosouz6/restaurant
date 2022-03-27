@@ -1,12 +1,11 @@
 import Header from "../../components/HeaderWaiter";
-import Search from '../../components/SearchDish';
 import { useRequest } from '../../context/requests';
 import { useDatasDish } from '../../context/dish';
 
 import { useState } from 'react';
 import Axios from 'axios';
 
-import '../../styles/see.scss';
+import '../../styles/request.scss';
 
 export default function Waiter() {
 

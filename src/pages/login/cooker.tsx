@@ -3,6 +3,8 @@ import { useState, FormEvent } from "react";
 import { useAuth } from "../../context/auth";
 import Axios from "axios";
 
+import Header from '../../components/HeaderPublic';
+
 import "../../styles/pages/login.scss";
 
 export default function FormCooker() {
@@ -40,25 +42,28 @@ export default function FormCooker() {
 
     return (
         <div id="page-login">
+            <Header />
             <div className="container">
-                <div className="choose-login">
-                    <Link to="/login/garcom">Garçom</Link>
-                    <Link to="/login/cozinheiro">Cozinheiro</Link>
+                <div className="container-form">
+                    <div className="choose-login">
+                        <Link to="/login/garcom">Garçom</Link>
+                        <Link to="/login/cozinheiro">Cozinheiro</Link>
+                    </div>
+                    <h2>Logar como Cozinheiro</h2>
+                    <form onSubmit={submitLogin}>
+                        <input type="text" 
+                        placeholder="Email"
+                        onChange={e => setEmail(e.target.value)} />
+
+                        <input type="text" 
+                        placeholder="Senha"
+                        onChange={e => setPassword(e.target.value)} />
+
+                        <input type="submit" value="Entrar" />
+
+                        <span><Link to="/">Esqueceu a senha?</Link></span>
+                    </form>
                 </div>
-                <h2>Logar como Cozinheiro</h2>
-                <form onSubmit={submitLogin}>
-                    <input type="text" 
-                    placeholder="Email"
-                    onChange={e => setEmail(e.target.value)} />
-
-                    <input type="text" 
-                    placeholder="Senha"
-                    onChange={e => setPassword(e.target.value)} />
-
-                    <input type="submit" value="Entrar" />
-
-                    <span><Link to="/">Esqueceu a senha?</Link></span>
-                </form>
             </div>
         </div>
     )

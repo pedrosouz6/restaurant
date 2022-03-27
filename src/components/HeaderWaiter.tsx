@@ -27,8 +27,8 @@ export default function Header() {
             <div className="center">
                 <div className="header-page">
                     <div className="header-left">
-                        <div className="logo">
-                            <h1>Restaurant</h1>
+                        <div className="logo-header">
+                            <Link to='/'>Restaurant</Link>
                         </div>
                         <nav>
                             <ul>

@@ -2,6 +2,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { FormEvent, useState } from "react";
 import Axios from "axios";
 
+import Header from '../../components/HeaderPublic';
+
 import { useAuth } from "../../context/auth";
 
 import "../../styles/pages/login.scss";
@@ -47,32 +49,35 @@ export default function RegisterCooker () {
 
     return (
         <div id="page-login">
+            <Header />
             <div className="container">
-                <div className="choose-login">
-                    <Link to="/cadastrar/garcom">Garçom</Link>
-                    <Link to="/cadastrar/cozinheiro">Cozinheiro</Link>
+                <div className="container-form">
+                    <div className="choose-login">
+                        <Link to="/cadastrar/garcom">Garçom</Link>
+                        <Link to="/cadastrar/cozinheiro">Cozinheiro</Link>
+                    </div>
+                    <h2>Criar conta como garçom</h2>
+
+                    <form onSubmit={registerWaiter}>
+                        <input type="text" 
+                        placeholder="Nome"
+                        value={name}
+                        onChange={e => setName(e.target.value)} />
+
+                        <input type="text" 
+                        placeholder="Email"
+                        value={email}
+                        onChange={e => setEmail(e.target.value)} />
+
+                        <input type="text" 
+                        placeholder="Senha"
+                        value={password}
+                        onChange={e => setPassword(e.target.value)} />
+                        <input type="submit" value="Criar conta" />
+
+                        <span><Link to="/login/garcom">Já tenho conta</Link></span>
+                    </form> 
                 </div>
-                <h2>Criar conta como garçom</h2>
-
-                <form onSubmit={registerWaiter}>
-                    <input type="text" 
-                    placeholder="Nome"
-                    value={name}
-                    onChange={e => setName(e.target.value)} />
-
-                    <input type="text" 
-                    placeholder="Email"
-                    value={email}
-                    onChange={e => setEmail(e.target.value)} />
-
-                    <input type="text" 
-                    placeholder="Senha"
-                    value={password}
-                    onChange={e => setPassword(e.target.value)} />
-                    <input type="submit" value="Criar conta" />
-
-                    <span><Link to="/login/garcom">Já tenho conta</Link></span>
-                </form> 
             </div>
         </div>
     )

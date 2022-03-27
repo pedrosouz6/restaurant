@@ -1,12 +1,20 @@
 #page-login {
     width: 100%;
     height: 100vh;
+    background-color: rgb(106, 90, 205);
 
     .container {
+        height: calc(100vh - 70px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container-form {
         flex: 1 1 250px;
         max-width: 370px;
         height: auto;
-        background-color: springgreen;
+        background-color: white;
         border-radius: 3px;
     }
 
@@ -22,28 +30,32 @@
     }
 
     .choose-login a {
-        flex: 1;
         display: block;
-        line-height: 40px;
-        
-        text-align: center;
-        border-bottom: 1px solid white;
-        
+        flex: 1;
+
         font-size: 14px;
         font-weight: 500;
         letter-spacing: .5px;
-        color: #333;
+        line-height: 40px;
+        border-radius: 3px 3px 0 0;
+        
+        text-align: center;
         text-decoration: none;
+        
+        color: #333;
+        border-bottom: 1px solid rgb(106, 90, 205);
 
         transition: .2s ease-in-out;
-    }
 
-    .choose-login a:hover {
-        background-color: rgb(53, 243, 148);
+        &:hover {
+            box-shadow: -2px -2px 5px rgba(255, 255, 255, .3);
+            color: white;
+            background-color: rgb(106, 90, 205);
+        }
     }
 
     .choose-login a:first-child {
-        border-right: 1px solid white;
+        border-right: 1px solid rgb(106, 90, 205);
     }
 
     form {
@@ -53,30 +65,40 @@
     form input {
         width: 100%;
         height: 40px;
-
+        
         display: block;
+
+        border: none;
+        border-bottom: 2px solid rgb(106, 90, 205) !important;
+        color: #333;
 
         font-size: 14px;
         margin-bottom: 1.5rem;
         padding: 0 10px;
         border-radius: 3px;
-        border: none;
+        letter-spacing: .5px;
     }
 
     form input[type="submit"] {
-        background: none;
-        border: 2px solid white;
+        background: rgb(106, 90, 205);
+        color: white;
         cursor: pointer;
 
         font-size: 14px;
         font-weight: 500;
         letter-spacing: .5px;
+
+        transition: .3s ease-in-out;
+
+        &:hover {
+            background: rgba(106, 90, 205, .9);
+        }
     }
 
     span a{
         display: block;
         text-align: center;
-        text-decoration: none;
         margin: 1rem 0;
+        color: rgb(106, 90, 205);
     }
 }

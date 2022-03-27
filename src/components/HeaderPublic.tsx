@@ -7,14 +7,13 @@ export default function Header() {
             <div className="center">
                 <div className="container-header">
                     <div className="logo-header">
-                        <h1>Restaurante</h1>
+                        <Link to='/'>Restaurante</Link>
                     </div>
                     <nav>
                         <ul>
-                            <li><Link to="/cozinheiro/ver-pedidos">Ver pedidos cozinheiro</Link></li>
-                            <li><Link to="/cadastrar/garcom">Garçom</Link></li>
                             <li><Link to="/login/admin">Admin</Link></li>
                             <li><Link to="/cadastrar/cozinheiro">Cozinheiro</Link></li>
+                            <li><Link to="/cadastrar/garcom">Garçom</Link></li>
                         </ul>
                     </nav>
                 </div>
