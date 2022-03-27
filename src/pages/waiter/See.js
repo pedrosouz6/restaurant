@@ -19,7 +19,6 @@ export default function Waiter() {
                             <div className="center">
                                 <div className="container-search">
                                     <h1>Ver os pedidos</h1>
-                                    <Search /> 
                                 </div>
                             </div>
                         </div>

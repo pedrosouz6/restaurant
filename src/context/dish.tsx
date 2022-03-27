@@ -21,17 +21,19 @@ export default function ProviderDatasDish({ children }: TypeProviderDatasDish) {
 
     useEffect(() => {
         Axios.get('http://localhost:3333/get/dish')
-        .then(response => setDatasDish(response.data))
+        .then(response => {
+            if(response.data) {
+                setDatasDish(response.data);
+            }
+        })
     }, [callApi]);
-
-    console.log(datasDish)
 
     return (
         <DatasDishContext.Provider value={{
             datasDish,
             setDatasDish,
             callApi,
-            setCallApi
+            setCallApi,
         }}>
 
             { children }

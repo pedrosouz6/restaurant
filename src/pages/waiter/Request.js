@@ -12,14 +12,12 @@ export default function Waiter() {
 
     const { datasDish } = useDatasDish();
     const { requests, loopApi, setLoopApi, requestFinishid, requestInProgress } = useRequest();
-    console.log(requests)
 
     const [ dish, setDish ] = useState('');
     const [ table, setTable ] = useState('');
 
     function sendRequest(e) {
         e.preventDefault();
-        console.log(dish)
 
         const validate = dish.trim() === '' || table.trim() === '';
 
@@ -48,7 +46,6 @@ export default function Waiter() {
                     <div className="center">
                         <div className="container-search">
                             <h1>Fazer pedido</h1>
-                            <Search /> 
                         </div>
                     </div>
                 </div>

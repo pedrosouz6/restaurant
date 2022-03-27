@@ -1,7 +1,9 @@
 import Search from '../../components/SearchDish';
 import  '../../styles/pages/menu.scss';
+
 import { useEffect } from 'react';
 import { useAuth } from '../../context/auth';
+import { useSearch } from '../../context/search';
 import { useDatasDish } from '../../context/dish';
 
 type TypeUserData = {
@@ -15,7 +17,15 @@ type TypeUserData = {
 export default function Menu() {
 
     const { setDatasUser } = useAuth();
+    const { searchFilter } = useSearch();
     const { datasDish } = useDatasDish();
+
+    const dataFilter = datasDish.filter((item: TypeUserData) => {
+        const dishName = item.name_dish;
+        const dishNameLower = dishName.toLowerCase(); 
+        const searchFilterLower = searchFilter.toLowerCase();
+        return dishNameLower.includes(searchFilterLower);
+    });
 
     useEffect(() => {
         const user = localStorage.getItem('user');
@@ -29,6 +39,8 @@ export default function Menu() {
             const token = tokenUser.token;
         }
     }, []);
+
+
 
     return (
         <div id="menu-page">
@@ -53,7 +65,7 @@ export default function Menu() {
                             </tr>
                         </thead>
                         <tbody>
-                            {datasDish.map((item: TypeUserData, key: string) => (
+                            {dataFilter.map((item: TypeUserData, key: string) => (
                                 <tr key={key}>
                                     <td>{ item.name_dish }</td>
                                     <td>{ item.ingredients_dish }</td>

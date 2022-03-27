@@ -4,6 +4,7 @@ import { useAuth } from './context/auth';
 import AuthProvider from './context/auth';
 import DatasDishProvider from './context/dish';
 import RequestProvider from './context/requests';
+import SearchFilter from './context/search';
 
 import See from './pages/waiter/See';
 import Home from './pages/home/Home';
@@ -38,37 +39,39 @@ export default function Routess() {
 
     return (
         <Router>
-            <DatasDishProvider>
-                <RequestProvider>
-                    <AuthProvider>
-                        <Routes>
-                            {/* Route Public */}
-                            <Route path='/' element={ <Home /> } />
-                            <Route path='/login/cozinheiro' element={ <LoginCooker /> } />
-                            <Route path='/login/garcom' element={ <LoginWaiter /> } />
-                            <Route path='/login/admin' element={ <LoginAdmin /> } />
+            <SearchFilter>
+                <DatasDishProvider>
+                    <RequestProvider>
+                        <AuthProvider>
+                            <Routes>
+                                {/* Route Public */}
+                                <Route path='/' element={ <Home /> } />
+                                <Route path='/login/cozinheiro' element={ <LoginCooker /> } />
+                                <Route path='/login/garcom' element={ <LoginWaiter /> } />
+                                <Route path='/login/admin' element={ <LoginAdmin /> } />
 
-                            <Route path='/cardapio' element={ <Menu /> } />
-                            <Route path='/admin/add-dish' element={ <AddDish /> } />
-                            <Route path='/garcom/fazer-pedidos' element={ <Private> <RequestWaiter /> </Private> } />
-                            <Route path='/garcom/ver-pedidos' element={ <Private>  <See /> </Private> } />
-                            <Route path='/cozinheiro/ver-pedidos' 
-                            element= { <Private> <SeeCooker /> </Private> } />
-                            <Route path='/cadastrar/cozinheiro' element={ <RegisterCooker /> } />
-                            <Route path='/cadastrar/garcom' element={ <RegisterWaiter /> } />
-                            <Route path='*' element={ <Home /> } />
+                                <Route path='/cardapio' element={ <Menu /> } />
+                                <Route path='/admin/add-dish' element={ <AddDish /> } />
+                                <Route path='/garcom/fazer-pedidos' element={ <Private> <RequestWaiter /> </Private> } />
+                                <Route path='/garcom/ver-pedidos' element={ <Private>  <See /> </Private> } />
+                                <Route path='/cozinheiro/ver-pedidos' 
+                                element= { <Private> <SeeCooker /> </Private> } />
+                                <Route path='/cadastrar/cozinheiro' element={ <RegisterCooker /> } />
+                                <Route path='/cadastrar/garcom' element={ <RegisterWaiter /> } />
+                                <Route path='*' element={ <Home /> } />
 
-                            {/* Menu */}
-                            <Route path='/admin/cardapio' element={ <Private><MenuAdmin /></Private> } />
-                            <Route path='/garcom/cardapio' element={ <Private> <MenuWaiter /> </Private> } />
-                            <Route path='/cozinheiro/cardapio' element={ <Private> <MenuCooker /> </Private> } />
+                                {/* Menu */}
+                                <Route path='/admin/cardapio' element={ <Private><MenuAdmin /></Private> } />
+                                <Route path='/garcom/cardapio' element={ <Private> <MenuWaiter /> </Private> } />
+                                <Route path='/cozinheiro/cardapio' element={ <Private> <MenuCooker /> </Private> } />
 
-                            {/* Admin */}
-                            <Route path='/admin/todos-usuarios' element={<Private> <AllUsers /> </Private>} />
-                        </Routes>
-                    </AuthProvider>
-                </RequestProvider>
-            </DatasDishProvider>
+                                {/* Admin */}
+                                <Route path='/admin/todos-usuarios' element={<Private> <AllUsers /> </Private>} />
+                            </Routes>
+                        </AuthProvider>
+                    </RequestProvider>
+                </DatasDishProvider>
+            </SearchFilter>
         </Router>
     )
 }
