@@ -49,13 +49,12 @@ export default function AllUsers() {
             <div className="container-search-global">
                 <div className="center">
                     <div className="container-search">
-                        <h1>Ver todos usuários</h1>
-                            <select onChange={e => getValues(e.target.value)}>
-                                <option value='none'>Escolha o tipo de usuario</option>
-                                <option value='waiter'>Garçom</option>
-                                <option value='cooker'>Cozinheiro</option>
-                            </select>
-                        <Search />
+                        <h2>Ver todos usuários</h2>
+                        <select onChange={e => getValues(e.target.value)}>
+                            <option value='none'>Escolha o tipo de usuario</option>
+                            <option value='waiter'>Garçom</option>
+                            <option value='cooker'>Cozinheiro</option>
+                        </select>
                     </div>
                 </div>
             </div>

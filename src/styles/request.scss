@@ -1,18 +1,11 @@
 #page-waiter {
     width: 100%;
- 
     
     .container {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         gap: 1rem;
-    }
-    
-    .section-header h1 {
-        font-size: 24px;
-        padding: 1rem 0 30px 0px;
-        color: #333;
     }
     
     #section-request {

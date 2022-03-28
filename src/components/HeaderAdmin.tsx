@@ -33,7 +33,6 @@ export default function Header() {
                         </div>
                         <nav>
                             <ul>
-                                <li><Link to="#">Ver os pedidos</Link></li>
                                 <li><Link to="/admin/cardapio">Ver o cardapio</Link></li>
                                 <li><Link to="/admin/add-dish">Adicionar prato</Link></li>
                                 <li><Link to="/admin/todos-usuarios">Usuários</Link></li>

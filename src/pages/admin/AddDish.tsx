@@ -63,7 +63,9 @@ export default function AddDish() {
                 <div className="container-form">
                     <div className="headers-admin-pages">
                         <div className='center'>
-                            <h2>Adicionar prato</h2>
+                            <div className="container-search">
+                                <h2>Adicionar prato</h2>    
+                            </div>
                         </div>
                     </div>
                     <div className='center'>

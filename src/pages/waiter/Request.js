@@ -27,9 +27,11 @@ export default function Waiter() {
         const getUser = localStorage.getItem('user');
         const user = JSON.parse(getUser);
         const userId = user.user.id;
+        const userName = user.user.name;
 
         Axios.post('http://localhost:3333/add/request', {
             userId,
+            userName,
             dish,
             table
         });
@@ -44,7 +46,7 @@ export default function Waiter() {
                 <div className="container-search-global">
                     <div className="center">
                         <div className="container-search">
-                            <h1>Fazer pedido</h1>
+                            <h2>Fazer pedido</h2>
                         </div>
                     </div>
                 </div>
