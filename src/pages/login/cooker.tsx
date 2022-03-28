@@ -15,13 +15,13 @@ export default function FormCooker() {
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
     const [ token, setToken ] = useState('');
-
+    const [ message, setMessage ] = useState('');
 
     function submitLogin(e : FormEvent) {
         e.preventDefault();
 
         if(email === '' || password === '') {
-            return console.log('campo vazio(login cozinheiro)');
+            return setMessage('Preencha o(s) campo(s) acima');
         }
 
         Axios.post(`http://localhost:3333/login/cooker`, {
@@ -30,7 +30,7 @@ export default function FormCooker() {
         })
         .then(response => {
             if(response.data.message) {
-                return console.log('Usuario não existe')
+                return setMessage('Esse usuário não existe');
             }
 
             setDatasUser(response.data.user);
@@ -58,6 +58,8 @@ export default function FormCooker() {
                         <input type="text" 
                         placeholder="Senha"
                         onChange={e => setPassword(e.target.value)} />
+
+                        { !(message === '') && (<p className='message-erro'>{message}</p>) }
 
                         <input type="submit" value="Entrar" />
 

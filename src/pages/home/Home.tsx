@@ -1,8 +1,12 @@
 import Header from '../../components/HeaderPublic';
+import { useNavigate } from 'react-router-dom';
 
 import '../../styles/pages/home.scss';
 
 export default function Home() {
+
+    const navigate = useNavigate();
+
     return (
         <div id="page-home">
             <Header />
@@ -22,8 +26,7 @@ export default function Home() {
                             </nav>
                         </div>
                         <div className="footer-card">
-                            <button className='btn-login'>Entrar</button>
-                            <button className='btn-create'>Criar conta</button>
+                            <button className='btn-login' onClick={() => navigate('/login/admin')}>Entrar</button>
                         </div>
                     </div>
                     <div className="cards">
@@ -39,8 +42,8 @@ export default function Home() {
                             </nav>                            
                         </div>
                         <div className="footer-card">
-                            <button className='btn-login'>Entrar</button>
-                            <button className='btn-create'>Criar conta</button>
+                            <button className='btn-login' onClick={() => navigate('/login/garcom')}>Entrar</button>
+                            <button className='btn-create' onClick={() => navigate('/cadastrar/garcom')}>Criar conta</button>
                         </div>
                     </div>
                     <div className="cards">
@@ -57,8 +60,8 @@ export default function Home() {
                             </nav>
                         </div>
                         <div className="footer-card">
-                            <button className='btn-login'>Entrar</button>
-                            <button className='btn-create'>Criar conta</button>
+                            <button className='btn-login' onClick={() => navigate('/login/cozinheiro')}>Entrar</button>
+                            <button className='btn-create' onClick={() => navigate('/cadastrar/cozinheiro')} >Criar conta</button>
                         </div>
                     </div>
                 </div>
