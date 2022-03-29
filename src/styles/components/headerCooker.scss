@@ -33,25 +33,4 @@
     .header-left ul li a:hover {
         text-decoration: underline;
     }
-    
-    .header-right {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-    }
-    
-    .header-right button {
-        cursor: pointer;
-        background: none;
-        border: 2px solid white;
-        color: white;
-        letter-spacing: .3px;
-        border-radius: 25px;
-        font-weight: 500;
-        padding: 8px 15px;
-    }
-    
-    .header-right p {
-        color: white;
-    }
 }

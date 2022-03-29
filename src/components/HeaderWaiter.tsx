@@ -1,27 +1,9 @@
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
 
-import { useAuth } from '../context/auth';
+import Profile from './Profile';
 import '../styles/components/headerWaiter.scss';
-import BtnSignOut from './SignOut';
 
-export default function Header() {
-
-    const { setDatasUser, datasUser } = useAuth();
-
-    useEffect(() => {
-        const user = localStorage.getItem('user');
-
-        if(user) {
-            const userd = JSON.parse(user);
-            const datas = userd.user;
-            setDatasUser(datas);
-
-            const tokenUser = JSON.parse(user);
-            const token = tokenUser.token;
-        }
-    }, []);
-
+export default function HeaderWaiter() {
     return (
         <header id='header-waiter'>
             <div className="center">
@@ -38,10 +20,7 @@ export default function Header() {
                             </ul>
                         </nav>
                     </div>
-                    <div className="header-right">
-                        <BtnSignOut />
-                        <p>{datasUser.name}</p>
-                    </div>
+                    <Profile />
                 </div>
             </div>
         </header>
