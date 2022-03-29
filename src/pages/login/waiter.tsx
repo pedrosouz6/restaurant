@@ -70,7 +70,7 @@ export default function FormCooker() {
 
                         <input type='submit' value='Entrar' />
 
-                        <span><Link to='/'>Esqueceu a senha?</Link></span>
+                        <span><Link to='/forgot/waiter'>Esqueceu a senha?</Link></span>
                     </form> 
                 </div>
             </div>

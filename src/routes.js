@@ -25,6 +25,9 @@ import MenuAdmin from './pages/menu/MenuAdmin';
 import MenuWaiter from './pages/menu/MenuWaiter';
 import MenuCooker from './pages/menu/MenuCooker';
 
+import ForgotCooker from './pages/forgot/cooker';
+import ForgotWaiter from './pages/forgot/waiter';
+
 export default function Routess() {
 
     const Private = ({children}) => {
@@ -67,6 +70,10 @@ export default function Routess() {
 
                                 {/* Admin */}
                                 <Route path='/admin/todos-usuarios' element={<Private> <AllUsers /> </Private>} />
+
+                                {/* Forgot */}
+                                <Route path='/forgot/cooker' element={ <ForgotCooker /> } />
+                                <Route path='/forgot/waiter' element={ <ForgotWaiter /> } />
                             </Routes>
                         </AuthProvider>
                     </RequestProvider>
