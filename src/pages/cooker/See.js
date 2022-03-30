@@ -63,7 +63,7 @@ export default function Request () {
                                     { datas.map((item, key) => (
                                         <tr key={key}>
                                             <td>{ item.name_request }</td>
-                                            <td>{ item.name_request }</td>
+                                            <td>{ item.name_user ? item.name_user : 'Usuário não identificado' }</td>
                                             <td className="number-table">{ item.table_request }</td>
                                             <td> 
                                                 <select onChange={e => updateStatus(item.id_request, e.target.value)}>

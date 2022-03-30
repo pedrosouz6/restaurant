@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import '../styles/components/profile.scss';
 import { useAuth } from '../context/auth';
 
+import { IoIosArrowUp } from 'react-icons/io'
 import { IoIosArrowDown } from 'react-icons/io';
 import { GoSignOut } from 'react-icons/go';
 import { AiFillSetting } from 'react-icons/ai';
@@ -28,6 +29,8 @@ export default function Profile() {
         }
     }, []);
 
+    console.log(datasUser)
+
     function signOut() {
         localStorage.removeItem('user');
         setAuthUser(false);
@@ -39,7 +42,7 @@ export default function Profile() {
         <div className="header-right">
 
             <p onClick={() => setModalProfile(!modalProfile)}>
-                {datasUser.name} <IoIosArrowDown/>
+                {datasUser.name} { modalProfile ? <IoIosArrowUp /> : <IoIosArrowDown/> }
             </p>
 
             { modalProfile && 

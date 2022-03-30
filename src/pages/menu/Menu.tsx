@@ -42,8 +42,6 @@ export default function Menu() {
         }
     }, []);
 
-
-
     return (
         <div id="menu-page">
             <div className="container-search-global">

@@ -3,6 +3,10 @@
     z-index: 2;
 
     p {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
         padding: 2px 0;
         color: white;
         cursor: pointer;
