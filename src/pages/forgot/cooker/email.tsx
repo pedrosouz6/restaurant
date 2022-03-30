@@ -3,11 +3,11 @@ import { useState, FormEvent } from "react";
 
 import Axios from "axios";
 
-import { useForgot } from '../../context/forgot';
+import { useForgot } from '../../../context/forgot';
 
-import Header from '../../components/HeaderPublic';
+import Header from '../../../components/HeaderPublic';
 
-import "../../styles/pages/login.scss";
+import "../../../styles/pages/login.scss";
 
 export default function ForgotCooker() {
 
@@ -30,8 +30,7 @@ export default function ForgotCooker() {
             if(response.data.exist) {
                 return navigate('/password/cooker');
             }
-            console.log(response)
-
+            
             return setMessage('Esse usuário não existe');
         });
     }
@@ -41,7 +40,7 @@ export default function ForgotCooker() {
             <Header />
             <div className="container">
                 <div className="container-form">
-                    <h2>Recuperar senha</h2>
+                    <h2>Recuperar senha - Cozinheiro</h2>
                     <form onSubmit={submitForgot}>
                         <input type="text" 
                         placeholder="Email"

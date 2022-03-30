@@ -26,9 +26,10 @@ import MenuAdmin from './pages/menu/MenuAdmin';
 import MenuWaiter from './pages/menu/MenuWaiter';
 import MenuCooker from './pages/menu/MenuCooker';
 
-import ForgotCooker from './pages/forgot/cooker';
-import NewPasswordCooker from './pages/forgot/newPasswordCooker';
-import ForgotWaiter from './pages/forgot/waiter';
+import ForgotCooker from './pages/forgot/cooker/email';
+import NewPasswordCooker from './pages/forgot/cooker/password';
+import ForgotWaiter from './pages/forgot/waiter/email';
+import NewPasswordWaiter from './pages/forgot/waiter/password';
 
 export default function Routess() {
 
@@ -78,7 +79,11 @@ export default function Routess() {
                                     {/* Forgot */}
                                     <Route path='/forgot/cooker' element={ <ForgotCooker /> } />
                                     <Route path='/password/cooker' element={ <NewPasswordCooker /> } />
+
                                     <Route path='/forgot/waiter' element={ <ForgotWaiter /> } />
+                                    <Route path='/password/waiter' element={ <NewPasswordWaiter /> } />
+
+                                    {/* <Route path='/forgot/waiter' element={ <ForgotWaiter /> } /> */}
                                 </Routes>
                             </ForgotProvider>
                         </AuthProvider>

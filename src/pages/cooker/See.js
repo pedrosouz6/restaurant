@@ -54,7 +54,7 @@ export default function Request () {
                                 <thead>
                                     <tr>
                                         <td>Prato</td>
-                                        <td>Ingredientes</td>
+                                        <td>Quem fez o pedido</td>
                                         <td>Mesa</td>
                                         <td>Status do pedido</td>
                                     </tr>
