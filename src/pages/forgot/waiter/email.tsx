@@ -23,12 +23,12 @@ export default function ForgotCooker() {
             return setMessage('Preencha o campo acima');
         }
 
-        Axios.post(`http://localhost:3333/forgot/cooker`, {
+        Axios.post(`http://localhost:3333/forgot/waiter`, {
             emailForgot,
         })
         .then(response => {
             if(response.data.exist) {
-                return navigate('/password/cooker');
+                return navigate('/password/waiter');
             }
             
             return setMessage('Esse usuário não existe');

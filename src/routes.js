@@ -83,7 +83,6 @@ export default function Routess() {
                                     <Route path='/forgot/waiter' element={ <ForgotWaiter /> } />
                                     <Route path='/password/waiter' element={ <NewPasswordWaiter /> } />
 
-                                    {/* <Route path='/forgot/waiter' element={ <ForgotWaiter /> } /> */}
                                 </Routes>
                             </ForgotProvider>
                         </AuthProvider>
