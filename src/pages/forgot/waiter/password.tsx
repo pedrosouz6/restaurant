@@ -24,17 +24,17 @@ export default function ForgotCooker() {
             return setMessage('Preencha o campo acima');
         }
 
-        Axios.post(`http://localhost:3333/password/cooker`, {
+        Axios.post(`http://localhost:3333/password/waiter`, {
             emailForgot,
             password, 
         })
         .then(response => {
             if(response.data.success === true) {
-                return setMessage(response.data.message);
-            }   
+                setMessage(response.data.message);
+                return navigate('/login/garcom');
+            }
 
-            setMessage(response.data.message);
-            navigate('/login/cozinheiro');
+            return setMessage(response.data.message);
         });
     }
 
@@ -42,7 +42,7 @@ export default function ForgotCooker() {
 
     useEffect(() => {
         if(emailForgot === '') {
-            navigate('/login/cozinheiro');
+            navigate('/login/garcom');
         }
     }, [])
 
