@@ -8,7 +8,7 @@ import Header from '../../../components/HeaderPublic';
 
 import "../../../styles/pages/login.scss";
 
-export default function ForgotCooker() {
+export default function ForgotAdmin() {
 
     const { emailForgot } = useForgot();
 
@@ -24,14 +24,14 @@ export default function ForgotCooker() {
             return setMessage('Preencha o campo acima');
         }
 
-        Axios.post(`http://localhost:3333/password/waiter`, {
+        Axios.post(`http://localhost:3333/password/admin`, {
             emailForgot,
             password, 
         })
         .then(response => {
             if(response.data.success === true) {
                 setMessage(response.data.message);
-                return navigate('/login/garcom');
+                return navigate('/login/admin');
             }
 
             return setMessage(response.data.message);
@@ -40,7 +40,7 @@ export default function ForgotCooker() {
 
     useEffect(() => {
         if(emailForgot === '') {
-            navigate('/login/garcom');
+            navigate('/login/admin');
         }
     }, [])
 
@@ -49,7 +49,7 @@ export default function ForgotCooker() {
             <Header />
             <div className="container">
                 <div className="container-form">
-                    <h2>Nova senha - Garçom</h2>
+                    <h2>Nova senha - Admin</h2>
                     <form onSubmit={submitForgot}>
                         <input type="text" 
                         placeholder="Senha"

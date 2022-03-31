@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { useState, FormEvent, useEffect } from "react";
+import { useState, FormEvent } from "react";
+
 import Axios from "axios";
 
 import { useForgot } from '../../../context/forgot';
@@ -8,57 +9,47 @@ import Header from '../../../components/HeaderPublic';
 
 import "../../../styles/pages/login.scss";
 
-export default function ForgotCooker() {
+export default function ForgotAdmin() {
 
-    const { emailForgot } = useForgot();
+    const navigate = useNavigate();
+    const { setEmailForgot, emailForgot } = useForgot();
 
-    const navigate = useNavigate()
-
-    const [ password, setPassword ] = useState('');
     const [ message, setMessage ] = useState('');
 
     function submitForgot(e : FormEvent) {
         e.preventDefault();
 
-        if(password === '') {
+        if(emailForgot === '') {
             return setMessage('Preencha o campo acima');
         }
 
-        Axios.post(`http://localhost:3333/password/waiter`, {
+        Axios.post(`http://localhost:3333/forgot/admin`, {
             emailForgot,
-            password, 
         })
         .then(response => {
-            if(response.data.success === true) {
-                setMessage(response.data.message);
-                return navigate('/login/garcom');
+            if(response.data.exist) {
+                return navigate('/password/admin');
             }
-
-            return setMessage(response.data.message);
+            
+            return setMessage('Esse usuário não existe');
         });
     }
-
-    useEffect(() => {
-        if(emailForgot === '') {
-            navigate('/login/garcom');
-        }
-    }, [])
 
     return (
         <div id="page-login">
             <Header />
             <div className="container">
                 <div className="container-form">
-                    <h2>Nova senha - Garçom</h2>
+                    <h2>Recuperar senha - Admin</h2>
                     <form onSubmit={submitForgot}>
                         <input type="text" 
-                        placeholder="Senha"
-                        autoFocus
-                        onChange={e => setPassword(e.target.value)} />
+                        placeholder="Email"
+                        autoFocus 
+                        onChange={e => setEmailForgot(e.target.value)} />
 
                         { !(message === '') && (<p className='message-erro'>{message}</p>) }
 
-                        <input type="submit" value="Nova senha" />
+                        <input type="submit" value="Recuperar" />
                     </form>
                 </div>
             </div>

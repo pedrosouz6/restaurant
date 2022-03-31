@@ -55,6 +55,7 @@ export default function ForgotCooker() {
                     <form onSubmit={submitForgot}>
                         <input type="text" 
                         placeholder="Senha"
+                        autoFocus
                         onChange={e => setPassword(e.target.value)} />
 
                         { !(message === '') && (<p className='message-erro'>{message}</p>) }

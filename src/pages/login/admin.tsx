@@ -58,7 +58,7 @@ export default function LoginAdmin() {
 
                         <input type="submit" value="Entrar" />
 
-                        <span><Link to="/">Esqueceu a senha?</Link></span>
+                        <span><Link to="/forgot/admin">Esqueceu a senha?</Link></span>
                     </form>
                 </div>
             </div>

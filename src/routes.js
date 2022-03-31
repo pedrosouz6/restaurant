@@ -30,6 +30,8 @@ import ForgotCooker from './pages/forgot/cooker/email';
 import NewPasswordCooker from './pages/forgot/cooker/password';
 import ForgotWaiter from './pages/forgot/waiter/email';
 import NewPasswordWaiter from './pages/forgot/waiter/password';
+import ForgotAdmin from './pages/forgot/admin/email';
+import NewPasswordAdmin from './pages/forgot/admin/password';
 
 export default function Routess() {
 
@@ -82,6 +84,9 @@ export default function Routess() {
 
                                     <Route path='/forgot/waiter' element={ <ForgotWaiter /> } />
                                     <Route path='/password/waiter' element={ <NewPasswordWaiter /> } />
+
+                                    <Route path='/forgot/admin' element={ <ForgotAdmin /> } />
+                                    <Route path='/password/admin' element={ <NewPasswordAdmin /> } />
 
                                 </Routes>
                             </ForgotProvider>
