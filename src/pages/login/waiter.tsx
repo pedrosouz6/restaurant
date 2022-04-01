@@ -37,7 +37,7 @@ export default function FormCooker() {
             setDatasUser(response.data.user);
             localStorage.setItem('user', JSON.stringify(response.data));
             setAuthUser(true);
-            navigate('/garcom/fazer-pedidos');
+            navigate('/waiter/make-requests');
             setLoopApi(!loopApi);
         });
     }
@@ -48,8 +48,8 @@ export default function FormCooker() {
             <div className="container">
                 <div className='container-form'>
                     <div className='choose-login'>
-                        <Link to='/login/garcom'>Garçom</Link>
-                        <Link to='/login/cozinheiro'>Cozinheiro</Link>
+                        <Link to='/login/waiter'>Garçom</Link>
+                        <Link to='/login/cooker'>Cozinheiro</Link>
                     </div>
 
                     <h2>Logar como Garçom</h2>
@@ -57,6 +57,7 @@ export default function FormCooker() {
                     <form onSubmit={submitLogin}>
                         <input type='text' 
                         placeholder='Email'
+                        autoFocus
                         value={email}
                         onChange={e => setEmail(e.target.value)} />
 

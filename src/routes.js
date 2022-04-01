@@ -10,7 +10,6 @@ import ForgotProvider from './context/forgot';
 import See from './pages/waiter/See';
 import Home from './pages/home/Home';
 import RequestWaiter from './pages/waiter/Request';
-import Menu from './pages/menu/Menu';
 import SeeCooker from './pages/cooker/See';
 import AddDish from './pages/admin/AddDish';
 import RegisterCooker from './pages/register/cooker';
@@ -52,31 +51,17 @@ export default function Routess() {
                     <RequestProvider>
                         <AuthProvider>
                             <ForgotProvider>
-
                                 <Routes>
-                                    {/* Route Public */}
-                                    <Route path='/' element={ <Home /> } />
-                                    <Route path='/login/cozinheiro' element={ <LoginCooker /> } />
-                                    <Route path='/login/garcom' element={ <LoginWaiter /> } />
-                                    <Route path='/login/admin' element={ <LoginAdmin /> } />
-
-                                    <Route path='/cardapio' element={ <Menu /> } />
-                                    <Route path='/admin/add-dish' element={ <AddDish /> } />
-                                    <Route path='/garcom/fazer-pedidos' element={ <Private> <RequestWaiter /> </Private> } />
-                                    <Route path='/garcom/ver-pedidos' element={ <Private>  <See /> </Private> } />
-                                    <Route path='/cozinheiro/ver-pedidos' 
-                                    element= { <Private> <SeeCooker /> </Private> } />
-                                    <Route path='/cadastrar/cozinheiro' element={ <RegisterCooker /> } />
-                                    <Route path='/cadastrar/garcom' element={ <RegisterWaiter /> } />
                                     <Route path='*' element={ <Home /> } />
 
-                                    {/* Menu */}
-                                    <Route path='/admin/cardapio' element={ <Private><MenuAdmin /></Private> } />
-                                    <Route path='/garcom/cardapio' element={ <Private> <MenuWaiter /> </Private> } />
-                                    <Route path='/cozinheiro/cardapio' element={ <Private> <MenuCooker /> </Private> } />
+                                    {/* Route Public */}
+                                    <Route path='/' element={ <Home /> } />
+                                    <Route path='/login/cooker' element={ <LoginCooker /> } />
+                                    <Route path='/login/waiter' element={ <LoginWaiter /> } />
+                                    <Route path='/login/admin' element={ <LoginAdmin /> } />
 
-                                    {/* Admin */}
-                                    <Route path='/admin/todos-usuarios' element={<Private> <AllUsers /> </Private>} />
+                                    <Route path='/register/cooker' element={ <RegisterCooker /> } />
+                                    <Route path='/register/waiter' element={ <RegisterWaiter /> } />
 
                                     {/* Forgot */}
                                     <Route path='/forgot/cooker' element={ <ForgotCooker /> } />
@@ -87,6 +72,18 @@ export default function Routess() {
 
                                     <Route path='/forgot/admin' element={ <ForgotAdmin /> } />
                                     <Route path='/password/admin' element={ <NewPasswordAdmin /> } />
+
+                                    {/* Route Private */}
+                                    <Route path='/admin/menu' element={ <Private><MenuAdmin /></Private> } />
+                                    <Route path='/admin/add-dish' element={ <Private> <AddDish /> </Private>} />
+                                    <Route path='/admin/all-users' element={<Private> <AllUsers /> </Private>} />
+
+                                    <Route path='/waiter/menu' element={ <Private> <MenuWaiter /> </Private> } />
+                                    <Route path='/waiter/make-requests' element={ <Private> <RequestWaiter /> </Private> } />
+                                    <Route path='/waiter/see-requests' element={ <Private>  <See /> </Private> } />
+
+                                    <Route path='/cooker/menu' element={ <Private> <MenuCooker /> </Private> } />
+                                    <Route path='/cooker/see-request' element= { <Private> <SeeCooker /> </Private> } />
 
                                 </Routes>
                             </ForgotProvider>

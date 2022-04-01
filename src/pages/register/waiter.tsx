@@ -39,7 +39,7 @@ export default function RegisterCooker () {
                 localStorage.setItem('user', JSON.stringify(response.data));
                 setDatasUser(response.data.user);
                 setAuthUser(true);
-                navigate('/garcom/fazer-pedidos');
+                navigate('/waiter/make-requests');
             });
         } else {
             console.log('campo(s) vazio(s)')    
@@ -53,8 +53,8 @@ export default function RegisterCooker () {
             <div className="container">
                 <div className="container-form">
                     <div className="choose-login">
-                        <Link to="/cadastrar/garcom">Garçom</Link>
-                        <Link to="/cadastrar/cozinheiro">Cozinheiro</Link>
+                        <Link to="/register/waiter">Garçom</Link>
+                        <Link to="/register/cooker">Cozinheiro</Link>
                     </div>
                     <h2>Criar conta como garçom</h2>
 
@@ -75,7 +75,7 @@ export default function RegisterCooker () {
                         onChange={e => setPassword(e.target.value)} />
                         <input type="submit" value="Criar conta" />
 
-                        <span><Link to="/login/garcom">Já tenho conta</Link></span>
+                        <span><Link to="/login/waiter">Já tenho conta</Link></span>
                     </form> 
                 </div>
             </div>

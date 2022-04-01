@@ -35,7 +35,7 @@ export default function LoginAdmin() {
             setDatasUser(response.data.user);
             localStorage.setItem('user', JSON.stringify(response.data));
             setAuthUser(true);
-            navigate('/admin/cardapio');
+            navigate('/admin/menu');
         });
     }
 
@@ -48,10 +48,13 @@ export default function LoginAdmin() {
                     <form onSubmit={submitLogin}>
                         <input type="text" 
                         placeholder="Email"
+                        value={email}
+                        autoFocus
                         onChange={e => setEmail(e.target.value)} />
 
-                        <input type="text" 
+                        <input type="text"
                         placeholder="Senha"
+                        value={password} 
                         onChange={e => setPassword(e.target.value)} />
 
                         { !(message === '') && (<p className='message-erro'>{message}</p>) }

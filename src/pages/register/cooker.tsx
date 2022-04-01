@@ -40,7 +40,7 @@ export default function RegisterCooker () {
             localStorage.setItem('user', JSON.stringify(response.data));
             setDatasUser(response.data.user);
             setAuthUser(true);
-            navigate('/cozinheiro/ver-pedidos');
+            navigate('/cooker/see-requests');
         });
     }
 
@@ -50,8 +50,8 @@ export default function RegisterCooker () {
             <div className="container">
                 <div className="container-form">
                     <div className="choose-login">
-                        <Link to="/cadastrar/garcom">Garçom</Link>
-                        <Link to="/cadastrar/cozinheiro">Cozinheiro</Link>
+                        <Link to="/register/waiter">Garçom</Link>
+                        <Link to="/register/cooker">Cozinheiro</Link>
                     </div>
 
                     <h2>Criar conta como cozinheiro</h2>
@@ -74,7 +74,7 @@ export default function RegisterCooker () {
                         onChange={e => setPassword(e.target.value)} />
                         <input type="submit" value="Criar conta" />
 
-                        <span><Link to="/login/cozinheiro">Já tenho conta</Link></span>
+                        <span><Link to="/login/cooker">Já tenho conta</Link></span>
                     </form> 
                 </div>
             </div>

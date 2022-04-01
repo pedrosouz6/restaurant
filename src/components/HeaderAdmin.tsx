@@ -14,9 +14,9 @@ export default function HeaderAdmin() {
                         </div>
                         <nav>
                             <ul>
-                                <li><Link to="/admin/cardapio">Ver o cardapio</Link></li>
+                                <li><Link to="/admin/menu">Ver o cardapio</Link></li>
                                 <li><Link to="/admin/add-dish">Adicionar prato</Link></li>
-                                <li><Link to="/admin/todos-usuarios">Usuários</Link></li>
+                                <li><Link to="/admin/all-users">Usuários</Link></li>
                             </ul>
                         </nav>
                     </div>

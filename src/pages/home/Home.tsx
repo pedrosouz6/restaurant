@@ -42,8 +42,8 @@ export default function Home() {
                             </nav>                            
                         </div>
                         <div className="footer-card">
-                            <button className='btn-login' onClick={() => navigate('/login/garcom')}>Entrar</button>
-                            <button className='btn-create' onClick={() => navigate('/cadastrar/garcom')}>Criar conta</button>
+                            <button className='btn-login' onClick={() => navigate('/login/waiter')}>Entrar</button>
+                            <button className='btn-create' onClick={() => navigate('/register/waiter')}>Criar conta</button>
                         </div>
                     </div>
                     <div className="cards">
@@ -60,8 +60,8 @@ export default function Home() {
                             </nav>
                         </div>
                         <div className="footer-card">
-                            <button className='btn-login' onClick={() => navigate('/login/cozinheiro')}>Entrar</button>
-                            <button className='btn-create' onClick={() => navigate('/cadastrar/cozinheiro')} >Criar conta</button>
+                            <button className='btn-login' onClick={() => navigate('/login/cooker')}>Entrar</button>
+                            <button className='btn-create' onClick={() => navigate('/register/cooker')} >Criar conta</button>
                         </div>
                     </div>
                 </div>

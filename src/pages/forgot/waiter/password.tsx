@@ -31,7 +31,7 @@ export default function ForgotCooker() {
         .then(response => {
             if(response.data.success === true) {
                 setMessage(response.data.message);
-                return navigate('/login/garcom');
+                return navigate('/login/waiter');
             }
 
             return setMessage(response.data.message);
@@ -40,7 +40,7 @@ export default function ForgotCooker() {
 
     useEffect(() => {
         if(emailForgot === '') {
-            navigate('/login/garcom');
+            navigate('/login/waiter');
         }
     }, [])
 

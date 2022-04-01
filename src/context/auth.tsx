@@ -41,13 +41,13 @@ export default function AuthProvider({ children } : TypeChildren) {
             
             if(typeUser === '1') {
                 setAuthUser(true);
-                navigate('/cozinheiro/ver-pedidos');
+                navigate('/cooker/see-requests');
             } else if(typeUser === '2'){
                 setAuthUser(true);
-                navigate('/garcom/fazer-pedidos');
+                navigate('/waiter/make-requests');
             } else if(typeUser === '3') {
                 setAuthUser(true);
-                navigate('/admin/cardapio');
+                navigate('/admin/menu');
             }
 
         } else {

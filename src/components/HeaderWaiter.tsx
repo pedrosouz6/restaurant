@@ -14,9 +14,9 @@ export default function HeaderWaiter() {
                         </div>
                         <nav>
                             <ul>
-                                <li><Link to="/garcom/fazer-pedidos">Fazer o pedido</Link></li>
-                                <li><Link to="/garcom/ver-pedidos">Ver os pedidos</Link></li>
-                                <li><Link to="/garcom/cardapio">Ver o cardápio</Link></li>
+                                <li><Link to="/waiter/make-requests">Fazer o pedido</Link></li>
+                                <li><Link to="/waiter/see-requests">Ver os pedidos</Link></li>
+                                <li><Link to="/waiter/menu">Ver o cardápio</Link></li>
                             </ul>
                         </nav>
                     </div>

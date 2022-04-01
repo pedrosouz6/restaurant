@@ -34,7 +34,7 @@ export default function ForgotCooker() {
             }   
 
             setMessage(response.data.message);
-            navigate('/login/cozinheiro');
+            navigate('/login/cooker');
         });
     }
 
@@ -42,7 +42,7 @@ export default function ForgotCooker() {
 
     useEffect(() => {
         if(emailForgot === '') {
-            navigate('/login/cozinheiro');
+            navigate('/login/cooker');
         }
     }, [])
 
