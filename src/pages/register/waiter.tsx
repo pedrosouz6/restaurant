@@ -16,6 +16,7 @@ export default function RegisterCooker () {
     const [ name, setName ] = useState('');
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
+    const [ message, setMessage ] = useState('');
 
     function registerWaiter(e : FormEvent){
         e.preventDefault();
@@ -23,17 +24,14 @@ export default function RegisterCooker () {
         const validate = name.trim() === '' || email.trim() === '' || password.trim() === '';
         
         if(!validate) {
-            console.log(name, password, email);
             Axios.post(`http://localhost:3333/register/waiter`, {
                 name, 
                 email,
                 password,
             })
             .then(response => {
-                console.log(response);
-
                 if(response.data.message) {
-                    return console.log(response.data.message);
+                    return setMessage('Esse e-mail já está em uso');
                 }
                     
                 localStorage.setItem('user', JSON.stringify(response.data));
@@ -42,7 +40,7 @@ export default function RegisterCooker () {
                 navigate('/waiter/make-requests');
             });
         } else {
-            console.log('campo(s) vazio(s)')    
+            setMessage('Preencha o(s) campo(s) acima');
         }
 
     }
@@ -73,7 +71,11 @@ export default function RegisterCooker () {
                         placeholder="Senha"
                         value={password}
                         onChange={e => setPassword(e.target.value)} />
+                        
+                        { !(message == '') && ( <p className='message-erro'>{message}</p> ) }
+
                         <input type="submit" value="Criar conta" />
+
 
                         <span><Link to="/login/waiter">Já tenho conta</Link></span>
                     </form> 

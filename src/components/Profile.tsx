@@ -7,7 +7,6 @@ import { useAuth } from '../context/auth';
 import { IoIosArrowUp } from 'react-icons/io'
 import { IoIosArrowDown } from 'react-icons/io';
 import { GoSignOut } from 'react-icons/go';
-import { AiFillSetting } from 'react-icons/ai';
 
 export default function Profile() {
 
@@ -47,7 +46,6 @@ export default function Profile() {
                 <nav>
                     <ul>
                         <li onClick={() => signOut()}> <GoSignOut /> Sign out</li>
-                        <li> <AiFillSetting /> Settings</li>
                     </ul>
                 </nav> 
             }

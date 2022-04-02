@@ -36,7 +36,7 @@ export default function FormCooker() {
             setDatasUser(response.data.user);
             localStorage.setItem('user', JSON.stringify(response.data));
             setAuthUser(true);
-            navigate('/cooker/see-request');
+            navigate('/cooker/see-requests');
         });
     }
 

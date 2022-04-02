@@ -1,5 +1,6 @@
 import { createContext, useState, useContext, useEffect, ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
+import Axios from 'axios'
 
 type TypeChildren = {
     children: ReactNode
@@ -29,7 +30,7 @@ export default function AuthProvider({ children } : TypeChildren) {
     const navigate = useNavigate();
 
     const [ authUser, setAuthUser ] = useState(false);
-    const [ datasUser, setDatasUser ] = useState({} as TypeDatasUser );
+    const [ datasUser, setDatasUser ] = useState({} as TypeDatasUser);
     const [ loading, setLoading ] = useState(false);
 
     useEffect(() => {
@@ -38,16 +39,47 @@ export default function AuthProvider({ children } : TypeChildren) {
         if(user) {
             const userObj = JSON.parse(user);
             const typeUser = userObj.user.type;
-            
-            if(typeUser === '1') {
-                setAuthUser(true);
-                navigate('/cooker/see-requests');
-            } else if(typeUser === '2'){
-                setAuthUser(true);
-                navigate('/waiter/make-requests');
-            } else if(typeUser === '3') {
-                setAuthUser(true);
-                navigate('/admin/menu');
+
+            if(userObj.token) {
+                const token = userObj.token;
+
+                if(typeUser === '1') {
+                    Axios.get('http://localhost:3333/login/cooker/jwt', {
+                        headers: {
+                            'Authorization' : `Bearer ${token}`
+                        }
+                    })
+                    .then(response => {
+                        if(response.data.error === false) {
+                            setAuthUser(true);
+                            navigate('/cooker/see-requests');
+                        }
+                    })
+                } else if(typeUser === '2'){
+                    Axios.get('http://localhost:3333/login/cooker/jwt', {
+                        headers: {
+                            'Authorization' : `Bearer ${token}`
+                        }
+                    })
+                    .then(response => {
+                        if(response.data.error === false) {
+                            setAuthUser(true);
+                            navigate('/waiter/make-requests');
+                        }
+                    })
+                } else if(typeUser === '3') {
+                    Axios.get('http://localhost:3333/login/cooker/jwt', {
+                        headers: {
+                            'Authorization' : `Bearer ${token}`
+                        }
+                    })
+                    .then(response => {
+                        if(response.data.error === false) {
+                            setAuthUser(true);
+                            navigate('/admin/menu');
+                        }
+                    })
+                }
             }
 
         } else {

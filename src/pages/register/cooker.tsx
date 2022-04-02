@@ -12,6 +12,7 @@ export default function RegisterCooker () {
     const [ name, setName ] = useState('');
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
+    const [ message, setMessage ] = useState('');
 
     const { setDatasUser, setAuthUser } = useAuth();
 
@@ -22,26 +23,27 @@ export default function RegisterCooker () {
 
         const validate = name.trim() === '' || email.trim() === '' || password.trim() === '';
 
-        if(validate) {
-            return console.log("Errado")
+        if(!validate) {
+            Axios.post('http://localhost:3333/register/cooker', {
+                name,
+                email, 
+                password
+            })
+            .then(response => {
+                console.log(response);
+                if(response.data.message) {
+                    return setMessage('Esse e-mail já está em uso');
+                }
+                    
+                localStorage.setItem('user', JSON.stringify(response.data));
+                setDatasUser(response.data.user);
+                setAuthUser(true);
+                navigate('/cooker/see-requests');
+            });
+        } else {
+            setMessage('Preencha o(s) campo(s) acima');
         }
 
-        Axios.post('http://localhost:3333/register/cooker', {
-            name,
-            email, 
-            password
-        })
-        .then(response => {
-            console.log(response);
-            if(response.data.message) {
-                return console.log(response.data.message);
-            }
-                
-            localStorage.setItem('user', JSON.stringify(response.data));
-            setDatasUser(response.data.user);
-            setAuthUser(true);
-            navigate('/cooker/see-requests');
-        });
     }
 
     return (
@@ -72,6 +74,9 @@ export default function RegisterCooker () {
                         placeholder="Senha" 
                         value={password}
                         onChange={e => setPassword(e.target.value)} />
+                        
+                        { !(message == '') && ( <p className='message-erro'>{message}</p> ) }
+
                         <input type="submit" value="Criar conta" />
 
                         <span><Link to="/login/cooker">Já tenho conta</Link></span>

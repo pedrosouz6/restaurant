@@ -12,7 +12,7 @@ export default function FormCooker() {
 
     const { setDatasUser, setAuthUser } = useAuth();
     const { loopApi, setLoopApi } = useRequest();
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');

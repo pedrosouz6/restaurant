@@ -7,7 +7,6 @@ import '../../styles/see.scss';
 export default function Waiter() {
 
     const { requests } = useRequest();
-    console.log(requests);
 
     return (
         <div id="page-waiter">
