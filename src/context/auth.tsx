@@ -44,7 +44,7 @@ export default function AuthProvider({ children } : TypeChildren) {
                 const token = userObj.token;
 
                 if(typeUser === '1') {
-                    Axios.get('http://localhost:3333/login/cooker/jwt', {
+                    Axios.get('http://localhost:3333/login/jwt', {
                         headers: {
                             'Authorization' : `Bearer ${token}`
                         }
@@ -56,7 +56,7 @@ export default function AuthProvider({ children } : TypeChildren) {
                         }
                     })
                 } else if(typeUser === '2'){
-                    Axios.get('http://localhost:3333/login/cooker/jwt', {
+                    Axios.get('http://localhost:3333/login/jwt', {
                         headers: {
                             'Authorization' : `Bearer ${token}`
                         }
@@ -68,7 +68,7 @@ export default function AuthProvider({ children } : TypeChildren) {
                         }
                     })
                 } else if(typeUser === '3') {
-                    Axios.get('http://localhost:3333/login/cooker/jwt', {
+                    Axios.get('http://localhost:3333/login/jwt', {
                         headers: {
                             'Authorization' : `Bearer ${token}`
                         }
