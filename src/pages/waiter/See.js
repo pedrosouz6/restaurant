@@ -7,6 +7,7 @@ import '../../styles/see.scss';
 export default function Waiter() {
 
     const { requests } = useRequest();
+    console.log(requests);
 
     return (
         <div id="page-waiter">
@@ -41,32 +42,15 @@ export default function Waiter() {
                                                         item.status_request === 3 ? 'finishid' : 'finishid'}>
 
                                                         { item.status_request === 1 ? 'Pedidos Feito' : item.status_request === 2 ? 'Fazendo Pedido' :
-                                                        item.status_request === 3 ? 'pronto' : 'err'}
+                                                        item.status_request === 3 ? 'Pronto' : ''}
                                                     </td>
                                                 </tr>
-                                            )) }
-                                            <tr>
-                                                <td>Feijoada</td>
-                                                <td className="number-table">04</td>
-                                                <td className="in-process">Em andamento</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Baião de 2</td>
-                                                <td className="number-table">09</td>
-                                                <td className="delivered">Entregue</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Avenida paulista</td>
-                                                <td className="number-table">12</td>
-                                                <td className="finishid">Pronto</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Churrasco</td>
-                                                <td className="number-table">05</td>
-                                                <td className="finishid">Pronto</td>
-                                            </tr>
+                                            ))}
                                         </tbody>
                                     </table>
+
+                                    { requests.length < 1 && ( <p>Nenhum pedido</p> ) }
+
                                 </div>
                             </div>
                     </section>

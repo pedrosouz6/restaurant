@@ -29,8 +29,6 @@ export default function Profile() {
         }
     }, []);
 
-    console.log(datasUser)
-
     function signOut() {
         localStorage.removeItem('user');
         setAuthUser(false);

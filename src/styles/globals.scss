@@ -42,3 +42,14 @@
     text-align: center;
     margin-bottom: 1rem;
 }
+
+.table {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+    p {
+        text-align: center;
+    }
+}

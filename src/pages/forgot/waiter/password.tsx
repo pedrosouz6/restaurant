@@ -24,7 +24,7 @@ export default function ForgotCooker() {
             return setMessage('Preencha o campo acima');
         }
 
-        Axios.post(`http://localhost:3333/password/waiter`, {
+        Axios.put(`http://localhost:3333/password/waiter`, {
             emailForgot,
             password, 
         })

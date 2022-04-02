@@ -27,13 +27,10 @@ export default function Request () {
             Axios.get('http://localhost:3333/get/all/request')
             .then(response => setDatas(response.data))
         }
-
     }, [loopApi]);
 
-    console.log(datas)
-
     function updateStatus(id, status) {
-        Axios.put(`http://localhost:3333/update/request/${id}/${status}`)
+        Axios.put(`http://localhost:3333/update/request/${id}/${status}`);
     };
 
     return (
@@ -66,16 +63,36 @@ export default function Request () {
                                             <td>{ item.name_user ? item.name_user : 'Usuário não identificado' }</td>
                                             <td className="number-table">{ item.table_request }</td>
                                             <td> 
-                                                <select onChange={e => updateStatus(item.id_request, e.target.value)}>
-                                                    <option value='1'>Recebido</option>
-                                                    <option value='2'>Em andamento</option>
-                                                    <option value='3'>Pronto</option>
-                                                </select> 
+                                                <select onChange={e => updateStatus(item.id_request, e.target.value)} >
+                                                    { item.status_request === 1 && (
+                                                        <>
+                                                        <option value='1' selected>Recebido</option>
+                                                        <option value='2'>Em andamento</option>
+                                                        <option value='3'>Pronto</option>
+                                                        </>
+                                                    )}
+                                                    { item.status_request === 2 && (
+                                                        <>
+                                                        <option value='1' >Recebido</option>
+                                                        <option value='2' selected>Em andamento</option>
+                                                        <option value='3'>Pronto</option>
+                                                        </>
+                                                    )}
+                                                    { item.status_request === 3 && (
+                                                        <>
+                                                        <option value='1' >Recebido</option>
+                                                        <option value='2'>Em andamento</option>
+                                                        <option value='3' selected>Pronto</option>
+                                                        </>
+                                                    )}
+                                                  
+                                                </select>
                                             </td>
                                         </tr>
                                     )) }
                                 </tbody>
                             </table>
+                            { datas.length < 1 && ( <p>Nenhum pedido feito</p> ) }
                         </div>
                     </div>
                 </section>

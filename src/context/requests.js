@@ -26,7 +26,7 @@ export default function ProviderContext({ children }) {
                         setRequests(response.data);
                         const finishid = data.filter(item => item.status_request == 3);
                         const inProgress = data.filter(item => item.status_request == 2);
-                        setRequestFinishid(finishid)
+                        setRequestFinishid(finishid);
                         setRequestInProgress(inProgress);
                     }
                 });

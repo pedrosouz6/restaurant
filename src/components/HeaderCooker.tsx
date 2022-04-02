@@ -15,7 +15,8 @@ export default function HeaderCooker() {
                         </div>
                         <nav>
                             <ul>
-                                <li><Link to="/cooker/menu">Ver os pedidos</Link></li>
+                                <li><Link to="/cooker/see-requests">Ver os pedidos</Link></li>
+                                <li><Link to="/cooker/menu">Cardápio</Link></li>
                             </ul>
                         </nav>
                     </div>

@@ -83,7 +83,7 @@ export default function Routess() {
                                     <Route path='/waiter/see-requests' element={ <Private>  <See /> </Private> } />
 
                                     <Route path='/cooker/menu' element={ <Private> <MenuCooker /> </Private> } />
-                                    <Route path='/cooker/see-request' element= { <Private> <SeeCooker /> </Private> } />
+                                    <Route path='/cooker/see-requests' element= { <Private> <SeeCooker /> </Private> } />
 
                                 </Routes>
                             </ForgotProvider>

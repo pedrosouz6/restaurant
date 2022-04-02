@@ -24,7 +24,7 @@ export default function ForgotAdmin() {
             return setMessage('Preencha o campo acima');
         }
 
-        Axios.post(`http://localhost:3333/password/admin`, {
+        Axios.put(`http://localhost:3333/password/admin`, {
             emailForgot,
             password, 
         })
