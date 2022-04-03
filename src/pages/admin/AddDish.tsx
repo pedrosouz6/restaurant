@@ -116,9 +116,6 @@ export default function AddDish() {
                                         <td>R$ { item.price_dish }</td>
                                         <td className='tb-act'>
                                             <i onClick={() => deleteDish(item.id_dish)}> <FaTrash /> </i> 
-                                            <i><GrUpdate /></i>
-                                            <i><IoMdSettings />
-                                            </i>
                                         </td>
                                     </tr>
                                 ))}
