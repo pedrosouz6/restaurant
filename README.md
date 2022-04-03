@@ -4,4 +4,4 @@
 * Type 2: Waiter
 * Type 3: Admin
 
-<img src='./img-main.png' alt='Image main' />
+<img src='./images-github/img-main.png' alt='Image main' />
