@@ -6,10 +6,10 @@
 
 <img src='./images-github/img-main.png' alt='Image main' />
 
-## Admin
+# Admin
 
 
-#### Funcionalidades
+### Funcionalidades
 
 * Poderá excluir qualquer usuário(Garçom ou Cozinheiro); <br>
 * Adicionar pratos ao cardápio; <br>
