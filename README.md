@@ -1,13 +1,12 @@
-### System for restaurant
+# Sistema para restaurante
 
-* Type 1: Cooker
-* Type 2: Waiter
-* Type 3: Admin
+### Página home
 
 <img src='./images-github/img-main.png' alt='Image main' />
 
-# Admin
+##
 
+# Admin
 
 ### Funcionalidades
 
@@ -17,3 +16,26 @@
 * Ver o cardápio. <br> <br>
 
 <img src='./images-github/img-admin-add-dish.png'  />
+<img src='./images-github/img-admin-users.png'  />
+
+# Cozinheiro
+
+### Funcionalidades
+
+* Vai receber todos os pedidos que o garçom fazer; <br>
+* Indicar se o status do pedido(recebido, em andamento ou pronto); <br>
+* Ver o cardápio. <br> <br>
+
+<img src='./images-github/img-cooker-srequest.png'  />
+
+# Garçom
+
+### Funcionalidades
+
+* Fazer os pedidos; <br>
+* Ver o cardápio. <br> <br>
+
+<img src='./images-github/img-waiter-srequest.png'  />
+<img src='./images-github/img-waiter-mrequest.png'  />
+
+
