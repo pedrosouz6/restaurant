@@ -19,8 +19,9 @@ export default function Home() {
                         <div className="content-card">
                             <nav>
                                 <ul>
-                                    <li>Poderá excluir todos os usuários(Garçom ou Cozinheiro);</li>
-                                    <li>Adicionar pratos ao cardápio e também poderá remove-los;</li>
+                                    <li>Poderá excluir qualquer usuário(Garçom ou Cozinheiro);</li>
+                                    <li>Adicionar pratos ao cardápio;</li>
+                                    <li>Remover pratos do cardápio;</li>
                                     <li>Ver o cardápio.</li>
                                 </ul>
                             </nav>
@@ -55,7 +56,7 @@ export default function Home() {
                                 <ul>
                                     <li>Vai receber todos os pedidos que o garçom fazer;</li>
                                     <li>Indicar se o status do pedido(recebido, em andamento ou pronto);</li>
-                                    <li>Ver o cardápio</li>
+                                    <li>Ver o cardápio.</li>
                                 </ul>
                             </nav>
                         </div>
