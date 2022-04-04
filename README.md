@@ -1,13 +1,23 @@
 # Sistema para restaurante
 
-### Home
+### Sobre
 
-<img src='./images-github/img-main.png' alt='Imagem home' />
+<p> Esse projeto é um sistema para ajudar no controle de pedidos de um determinado restaurante, assim, não será mais preciso o uso das comandas pelos garçons. </p>
 
 ##
 
-### Login 
-<img src='./images-github/img-login.png' alt='Login - 500x230' />
+### Home
+
+<img src='./images-github/img-main.png' alt='Imagem home  - 500x230' />
+
+##
+
+### Criar conta e Login 
+
+<div style='display: flex'>
+  <img src='./images-github/img-register.png' alt='Login' />
+  <img src='./images-github/img-login.png' alt='Login' />
+</div>
 
 ##
 
@@ -46,4 +56,6 @@
 <img src='./images-github/img-waiter-srequest.png'  />
 <img src='./images-github/img-waiter-mrequest.png'  />
 
+##
 
+<p> Projeto desenvolvido para fins de estudo - Pedro Souza </p>
