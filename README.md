@@ -79,7 +79,7 @@
 #### Rodando o Front-end
  ``` bash
   # Clone esse repositório
-  $ git clone <>
+  $ git clone <https://github.com/pedrosouz6/restaurant>
   
   # Acesse a pasta do projeto no terminal/cmd
   $ cd NomeDaPasta
