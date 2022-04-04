@@ -3,7 +3,7 @@
 ### Sobre
 
 <p> Esse projeto é um sistema para ajudar no controle de pedidos de um determinado restaurante, assim, não será mais preciso o uso das comandas pelos garçons. </p>
-<span><strong>Importante:</strong> Esse projeto foi desenvolvido para fins de estudo</span>
+<span><strong>Importante:</strong> Esse projeto foi desenvolvido para fins de estudo.</span>
 
 ##
 
@@ -74,7 +74,7 @@
 ### Pré-requisitos
 
 <p> Antes de começar, você precisa ter instalado em sua máquina as seguintes ferramentas <a href='https://git-scm.com/downloads'> Git </a>, 
-  <a href='https://nodejs.org/en/download/'> Node.js </a> . Além disso, é preciso ter um bom editor para trabalhar com o código como o <a href='https://code.visualstudio.com/'> VSCode </a>. </p>
+  <a href='https://nodejs.org/en/download/'> Node.js </a> . Além disso, é preciso ter um bom editor para trabalhar com o código como o <a href='https://code.visualstudio.com/'> VSCode</a>. </p>
 
 #### Rodando o Front-end
  ``` bash
