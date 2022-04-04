@@ -9,11 +9,11 @@
 
 ### Home
 
-<img src='./images-github/img-main.png' alt='Imagem home  - 500x230' />
+<img src='./images-github/img-main.png' alt='Imagem home - 500x230' />
 
 ##
 
-### Criar conta e Login 
+### Criar conta e Login
 
 <div style='display: flex'>
   <img src='./images-github/img-register.png' alt='Cadastrar' />
@@ -24,9 +24,9 @@
 
 ### Cardápio
 
-<img src='./images-github/img-menu.png' alt='Cardápio' />
-
 <p> O cardápio é o mesmo para todos os tipos de usuário com uma funcionalidade de pesquisar por pratos </p>
+
+<img src='./images-github/img-menu.png' alt='Cardápio' />
 
 ##
 
@@ -62,8 +62,8 @@
 * Fazer os pedidos; <br>
 * Ver o cardápio. <br> <br>
 
-<img src='./images-github/img-waiter-srequest.png'  />
-<img src='./images-github/img-waiter-mrequest.png'  />
+<img src='./images-github/img-waiter-srequest.png' />
+<img src='./images-github/img-waiter-mrequest.png' />
 
 ##
 
