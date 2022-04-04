@@ -73,7 +73,7 @@
 
 ### Pré-requisitos
 
-<p> Antes de começar, você precisa ter instalado em sua máquina as seguintes ferramentas Git, Node.js. Além disso, é preciso ter um bom editor para trabalhar com o código como o <a href='https://code.visualstudio.com/' VSCode </a> </p>
+<p> Antes de começar, você precisa ter instalado em sua máquina as seguintes ferramentas Git, Node.js. Além disso, é preciso ter um bom editor para trabalhar com o código como o <a href='https://code.visualstudio.com/'> VSCode </a> </p>
 
 ##
 
