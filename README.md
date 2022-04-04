@@ -1,4 +1,4 @@
-# Sistema para restaurante
+## Sistema para restaurante
 
 ### Sobre
 
@@ -38,8 +38,10 @@
 * Remover pratos do cardápio; <br>
 * Ver o cardápio. <br> <br>
 
-<img src='./images-github/img-admin-add-dish.png' alt='Adicionar produto' />
-<img src='./images-github/img-admin-users.png' alt='Usuários' />
+<div style='display: flex'>
+  <img src='./images-github/img-admin-add-dish.png' alt='Adicionar produto' />
+  <img src='./images-github/img-admin-users.png' alt='Usuários' />
+</div>
 
 ##
 
@@ -62,8 +64,10 @@
 * Fazer os pedidos; <br>
 * Ver o cardápio. <br> <br>
 
-<img src='./images-github/img-waiter-srequest.png' alt='Ver pedidos' />
-<img src='./images-github/img-waiter-mrequest.png' alt='Fazer pedidos' />
+<div style='display: flex'>
+  <img src='./images-github/img-waiter-srequest.png' alt='Ver pedidos' />
+  <img src='./images-github/img-waiter-mrequest.png' alt='Fazer pedidos' />
+</div>
 
 ##
 
