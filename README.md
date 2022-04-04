@@ -16,9 +16,17 @@
 ### Criar conta e Login 
 
 <div style='display: flex'>
-  <img src='./images-github/img-register.png' alt='Login' />
+  <img src='./images-github/img-register.png' alt='Cadastrar' />
   <img src='./images-github/img-login.png' alt='Login' />
 </div>
+
+##
+
+### Cardápio
+
+<img src='./images-github/img-menu.png' alt='Cardápio' />
+
+<p> O cardápio é o mesmo para todos os tipos de usuário com uma funcionalidade de pesquisar por pratos </p>
 
 ##
 
