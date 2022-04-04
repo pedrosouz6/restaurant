@@ -3,6 +3,7 @@
 ### Sobre
 
 <p> Esse projeto é um sistema para ajudar no controle de pedidos de um determinado restaurante, assim, não será mais preciso o uso das comandas pelos garçons. </p>
+<span><strong>Importante:</strong> Esse projeto foi desenvolvido para fins de estudo</span>
 
 ##
 
@@ -58,4 +59,4 @@
 
 ##
 
-<p> Projeto desenvolvido para fins de estudo - Pedro Souza </p>
+<p> Desenvolvido por Pedro Souza </p>
